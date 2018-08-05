@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>JavaScript----判断数组类型的几种方式 | 个人主页</title>
+    <meta name="description" content="进击的程序源">
+    <link rel="icon" href="/img/logo.ico">
+  <link rel="manifest" href="/manifest.json">
+  <link rel="apple-touch-icon" href="/img/logo.png">
+    
+    <link rel="preload" href="/assets/css/0.styles.a951fa46.css" as="style"><link rel="preload" href="/assets/js/app.5ac09712.js" as="script"><link rel="preload" href="/assets/js/16.f0020e84.js" as="script"><link rel="prefetch" href="/assets/js/14.b54f952c.js"><link rel="prefetch" href="/assets/js/2.285762ea.js"><link rel="prefetch" href="/assets/js/3.8383dafe.js"><link rel="prefetch" href="/assets/js/4.88423077.js"><link rel="prefetch" href="/assets/js/5.7bf4d87f.js"><link rel="prefetch" href="/assets/js/6.058373b9.js"><link rel="prefetch" href="/assets/js/7.3884a514.js"><link rel="prefetch" href="/assets/js/8.f7f29a62.js"><link rel="prefetch" href="/assets/js/9.81258964.js"><link rel="prefetch" href="/assets/js/10.fc13595d.js"><link rel="prefetch" href="/assets/js/11.5be0b20c.js"><link rel="prefetch" href="/assets/js/12.8b15763e.js"><link rel="prefetch" href="/assets/js/13.eccf94d9.js"><link rel="prefetch" href="/assets/js/15.4366cb1a.js"><link rel="prefetch" href="/assets/js/17.f036e3a9.js"><link rel="prefetch" href="/assets/js/18.b373f4f1.js"><link rel="prefetch" href="/assets/js/19.69e9d52a.js"><link rel="prefetch" href="/assets/js/20.fa87e6ab.js"><link rel="prefetch" href="/assets/js/21.5e77bd5d.js"><link rel="prefetch" href="/assets/js/22.94d76691.js"><link rel="prefetch" href="/assets/js/23.cb42ffea.js"><link rel="prefetch" href="/assets/js/24.34a62490.js"><link rel="prefetch" href="/assets/js/25.8ae0f53a.js"><link rel="prefetch" href="/assets/js/26.6e2433e2.js"><link rel="prefetch" href="/assets/js/27.fca4b9d8.js"><link rel="prefetch" href="/assets/js/28.ea5bd219.js"><link rel="prefetch" href="/assets/js/29.77e9e865.js"><link rel="prefetch" href="/assets/js/30.5ee8ae91.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.a951fa46.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container no-sidebar"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">个人主页</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">主页</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title">博文</span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/android/" class="nav-link">Android</a></li><li class="dropdown-item"><!----> <a href="/ios/" class="nav-link">ios</a></li><li class="dropdown-item"><!----> <a href="/web/" class="nav-link">Web</a></li></ul></div></div><div class="nav-item"><a href="/about/" class="nav-link">关于</a></div><div class="nav-item"><a href="https://www.github.com/codeteenager" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <div class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">主页</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title">博文</span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/android/" class="nav-link">Android</a></li><li class="dropdown-item"><!----> <a href="/ios/" class="nav-link">ios</a></li><li class="dropdown-item"><!----> <a href="/web/" class="nav-link">Web</a></li></ul></div></div><div class="nav-item"><a href="/about/" class="nav-link">关于</a></div><div class="nav-item"><a href="https://www.github.com/codeteenager" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav>  <!----> </div> <div class="page"> <div class="content"><h1 id="判断一个对象是不是数组-共有几种方式"><a href="#判断一个对象是不是数组-共有几种方式" aria-hidden="true" class="header-anchor">#</a> 判断一个对象是不是数组?共有几种方式?</h1> <p>解析: typeof: 只能区分原始类型的函数<br>
+并不能进一步细致区分出对象的类型名;</p> <p>方法如下:</p> <h2 id="判断爹-原型对象"><a href="#判断爹-原型对象" aria-hidden="true" class="header-anchor">#</a> 判断爹(原型对象)</h2> <p>var bool=父对象.isPrototypeOf(子对象);</p> <h2 id="判断妈-构造函数-之一"><a href="#判断妈-构造函数-之一" aria-hidden="true" class="header-anchor">#</a> 判断妈(构造函数) 之一</h2> <p>obj.constructor===构造函数;
+问题: constructor 是隐藏属性,并不推荐使用;</p> <h2 id="判断妈-构造函数-之二"><a href="#判断妈-构造函数-之二" aria-hidden="true" class="header-anchor">#</a> 判断妈(构造函数) 之二</h2> <p>obj instanceof 构造函数;
+强调: 以上两种方式都不仅检查直接的父类型,也检查是不是整个原型链的</p> <h2 id="验dna"><a href="#验dna" aria-hidden="true" class="header-anchor">#</a> 验DNA</h2> <p>原理: 在每个对象内都有一个隐藏属性 Class<br>
+属性: class保存了对象创建时的最初类型;不会随着继承关系的改变而改变;<br>
+思路: 只有Object.prototype 中最原始 toString() 才能输出 class 属性
+返回值: [object class属性值];  //Object Array Date</p> <p>易错点: 使用子对象.toString(), 容易被父对象中的toString()所重写</p> <p>解决: 用call 强行调用Object.prototype中的 toString();
+Object.prototype.toString.call(obj);</p> <h2 id="isarray"><a href="#isarray" aria-hidden="true" class="header-anchor">#</a> isArray()</h2> <p>作用: 专门判断任何一个对象是不是Array类型
+语法: var bool=Array.isArray(obj);
+** 第四种 第五种方法都是严格验证  **</p> <h1 id="鄙视二-何时函数定义在原型对象中-何时将函数直接定义在构造函数上"><a href="#鄙视二-何时函数定义在原型对象中-何时将函数直接定义在构造函数上" aria-hidden="true" class="header-anchor">#</a> 鄙视二 何时函数定义在原型对象中,何时将函数直接定义在构造函数上?</h1> <p>答: 如果只允许指定类型的子对象才能使用的函数,必须放在原型对象中,继承使用
+如果希望不限制类型,所有对象都使用的函数,可以直接放在构造函数上:
+比如 : sort()    push()   isArray()
+Array.prototype.sort();
+Array.prototype.push();
+Array.isArray();</p></div> <div class="page-edit"><!----> <!----></div> <!----> </div> <!----></div></div>
+    <script src="/assets/js/16.f0020e84.js" defer></script><script src="/assets/js/app.5ac09712.js" defer></script>
+  </body>
+</html>
