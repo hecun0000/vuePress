@@ -1,5 +1,7 @@
 ---
 home: true
-actionText: 快速上手 →
-actionLink: /js/
---- 
+# actionText: 快速上手 →
+# actionLink: /js/
+
+layout: HomeLayout
+---
