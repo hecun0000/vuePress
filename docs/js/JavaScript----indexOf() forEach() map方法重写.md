@@ -1,10 +1,6 @@
----
-title: JavaScript-鄙视题之indexOf() forEach() map方法重写
-tags: JavaScript
-categories: 前端
-copyright: true
----
-# 请重写indexOf()方法 #
+
+# JavaScript-鄙视题之indexOf() forEach() map方法重写
+## 请重写indexOf()方法 #
 ```js
 if(typeof Array.prototype.indexOf !="function")
       Array.prototype.indexOf=function(elem,fromi){
@@ -18,7 +14,7 @@ if(typeof Array.prototype.indexOf !="function")
         return -1;
       }
 ```
-# 请重写forEach()方法 #
+## 请重写forEach()方法 #
 ```js
 if (typeof Array.prototype.forEach != 'function') {
         Array.prototype.forEach = function(callback){
@@ -30,7 +26,7 @@ if (typeof Array.prototype.forEach != 'function') {
         }
     }
 ```
-# 请重写map方法 #
+## 请重写map方法 #
 ```js
 if (typeof Array.prototype.map != 'function') {
         Array.prototype.map = function (callback) {

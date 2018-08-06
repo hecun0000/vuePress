@@ -1,10 +1,6 @@
----
-title: JavaScript-this关键字
-date: 2017-10-08 16:40:50
-tags: 你不知道的JavaScript上卷
-categories: 读书笔记
-copyright: true
----
+
+# this关键字
+
 <img src="http://oxi9lrcsm.bkt.clouddn.com/56697596_p0.jpg" alt="" style="width: 100%">
   
 this到底是一种什么机制?  

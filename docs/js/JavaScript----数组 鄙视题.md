@@ -1,9 +1,4 @@
----
-title: JavaScript----数组 鄙视题
-tags: JavaScript
-categories: 前端
-copyright: true
----
+# 数组 鄙视题  
 
 已知如下数组：
 ```js

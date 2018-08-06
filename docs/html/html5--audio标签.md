@@ -1,10 +1,4 @@
----
-title: html5中audio标签简要了解
-date: 2017-12-03 09:05:37
-tags: html5
-categories: 前端
-copyright: true
----
+
 
 # html5 中audio标签的使用
 

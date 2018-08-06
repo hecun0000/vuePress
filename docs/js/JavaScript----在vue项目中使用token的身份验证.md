@@ -1,9 +1,4 @@
----
-title: 在vue项目中使用token的身份验证  
-tags: 前端  
-categories: JavaScripts
-copyright: true  
----
+# 从在vue项目中使用token的身份验证    
 ## 工作原理  
 
 1. 前端页面进行登录操作, 将用户名与密码发给服务器;  

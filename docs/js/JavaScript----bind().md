@@ -1,9 +1,5 @@
----
-title: [JavaScript bind()方法的重写]
-tags: JavaScript
-categories: 前端
-copyright: true
----
+
+# JavaScript bind()方法的重写
 
 
 >bind()方法创建一个新的函数, 当被调用时，将其this关键字设置为提供的值，

@@ -7,16 +7,17 @@
 
 <script>
     import THREE from '../../public/utils/three/three';
+
     export default {
-        name:'waves',
-        data(){
+        name: 'waves',
+        data() {
             return {
-                SCREEN_WIDTH : window.innerWidth,
-                SCREEN_HEIGHT : window.SCREEN_HEIGHT
+                SCREEN_WIDTH: '',
+                SCREEN_HEIGHT: ''
             }
         },
         methods: {
-            liziInit () {
+            liziInit() {
                 //屏幕宽度
                 let SCREEN_WIDTH = window.innerWidth;
                 // 屏幕高度
@@ -43,76 +44,83 @@
                 // this.interval = setInterval(loop, 1000 / 60);
                 // 动画
                 loop();
+
                 function init() {
-                    container = document.createElement( 'div' );
+                    container = document.createElement('div');
                     container.style.position = 'relative';
                     container.style.top = '0px';
-                    document.getElementById('dynamicWaves').appendChild( container );
-                    camera = new THREE.Camera( 75, SCREEN_WIDTH / SCREEN_HEIGHT, 1, 10000 );
+                    document.getElementById('dynamicWaves').appendChild(container);
+                    camera = new THREE.Camera(75, SCREEN_WIDTH / SCREEN_HEIGHT, 1, 10000);
                     camera.position.z = 900;
                     scene = new THREE.Scene();
                     renderer = new THREE.CanvasRenderer();
-                    renderer.setSize( SCREEN_WIDTH, SCREEN_HEIGHT );
+                    renderer.setSize(SCREEN_WIDTH, SCREEN_HEIGHT);
                     particles = new Array();
                     let i = 0;
-                    let material = new THREE.ParticleCircleMaterial( 0xffffff, 1 );
-                    for ( let ix = 0; ix < AMOUNTX; ix ++ ) {
-                        for ( let iy = 0; iy < AMOUNTY; iy ++ ) {
-                            particle = particles[ i ++ ] = new THREE.Particle( material );
-                            particle.position.x = ix * SEPARATION - ( ( AMOUNTX * SEPARATION ) / 2 );
-                            particle.position.z = iy * SEPARATION - ( ( AMOUNTY * SEPARATION ) / 2 );
-                            scene.add( particle );
+                    let material = new THREE.ParticleCircleMaterial(0xffffff, 1);
+                    for (let ix = 0; ix < AMOUNTX; ix++) {
+                        for (let iy = 0; iy < AMOUNTY; iy++) {
+                            particle = particles[i++] = new THREE.Particle(material);
+                            particle.position.x = ix * SEPARATION - ((AMOUNTX * SEPARATION) / 2);
+                            particle.position.z = iy * SEPARATION - ((AMOUNTY * SEPARATION) / 2);
+                            scene.add(particle);
                         }
                     }
                     count = 0;
-                    container.appendChild( renderer.domElement );
+                    container.appendChild(renderer.domElement);
                     //给canvas加入鼠标移入事件
-                    document.getElementById('dynamicWaves').addEventListener( 'mousemove', onDocumentMouseMove, false );
-                    document.getElementById('dynamicWaves').addEventListener( 'touchmove', onDocumentTouchMove, false );
+                    document.getElementById('dynamicWaves').addEventListener('mousemove', onDocumentMouseMove, false);
+                    document.getElementById('dynamicWaves').addEventListener('touchmove', onDocumentTouchMove, false);
                 }
-                function onDocumentMouseMove( event ) {
+
+                function onDocumentMouseMove(event) {
                     mouseX = event.clientX - windowHalfX;
                     mouseY = event.clientY - windowHalfY;
                 }
-                function onDocumentTouchMove( event ) {
-                    if ( event.touches.length == 1 ) {
+
+                function onDocumentTouchMove(event) {
+                    if (event.touches.length == 1) {
                         event.preventDefault();
-                        mouseX = event.touches[ 0 ].pageX - windowHalfX;
-                        mouseY = event.touches[ 0 ].pageY - windowHalfY;
+                        mouseX = event.touches[0].pageX - windowHalfX;
+                        mouseY = event.touches[0].pageY - windowHalfY;
                     }
                 }
+
                 function loop() {
-                    camera.position.x += ( mouseX - camera.position.x ) * .05;
+                    camera.position.x += (mouseX - camera.position.x) * .05;
                     //    camera.position.y += ( - mouseY - camera.position.y ) * .05;
                     camera.position.y = 364;
                     let i = 0;
-                    for ( let ix = 0; ix < AMOUNTX; ix ++ ) {
-                        for ( let iy = 0; iy < AMOUNTY; iy ++ ) {
-                            particle = particles[ i++ ];
-                            particle.position.y = ( Math.sin( ( ix + count ) * 0.3 ) * 50 ) + ( Math.sin( ( iy + count ) * 0.5 ) * 50 );
-                            particle.scale.x = particle.scale.y = ( Math.sin( ( ix + count ) * 0.3 ) + 1 ) * 2 + ( Math.sin( ( iy + count ) * 0.5 ) + 1 ) * 2;
+                    for (let ix = 0; ix < AMOUNTX; ix++) {
+                        for (let iy = 0; iy < AMOUNTY; iy++) {
+                            particle = particles[i++];
+                            particle.position.y = (Math.sin((ix + count) * 0.3) * 50) + (Math.sin((iy + count) * 0.5) * 50);
+                            particle.scale.x = particle.scale.y = (Math.sin((ix + count) * 0.3) + 1) * 2 + (Math.sin((iy + count) * 0.5) + 1) * 2;
                         }
                     }
-                    renderer.render( scene, camera );
+                    renderer.render(scene, camera);
                     count += 0.1;
                     window.requestAnimationFrame(loop);
-                  // setTimeout(function () {
-                  //   window.requestAnimationFrame(loop);
-                  // }, 50);
+                    // setTimeout(function () {
+                    //   window.requestAnimationFrame(loop);
+                    // }, 50);
                 }
             }
         },
-        mounted () {
+        mounted() {
+            this.SCREEN_WIDTH = window.innerWidth;
+            this.SCREEN_HEIGHT = window.SCREEN_HEIGHT;
+
             this.liziInit();
-            console.log(window.innerHeight);
+
         },
     };
 </script>
 <style scoped>
-     .dynamic {
+    .dynamic {
         width: 100%;
-        position: relative;
-        background:linear-gradient(to right top,#724cff 30%,#2d8bff);
+        position: fixed;
+        background-image: linear-gradient(15deg, #13547a 0%, #80d0c7 100%);
         overflow: hidden;
     }
 </style>

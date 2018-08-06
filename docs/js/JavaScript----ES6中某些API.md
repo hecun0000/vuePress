@@ -1,10 +1,6 @@
----
-title: ES6中某些数组API
-tags: JavaScript
-categories: 前端
-copyright: true
----
-### indexOf()重写
+# ES6中某些数组API
+
+  
 ### reduce():遍历数组中的每个值,汇总出一个最终的结果
 语法:
 
@@ -67,20 +63,21 @@ function getChildren1(parent){
 
     创建元素节点迭代器
   使用doucment.createNodeIterator()方法,创建它的新实例.这个方法接受四个参数;
-      - root: 想要作为搜素起点的树中节点
-      - whatToShow: 表示要访问哪些节点的数字代码
-      - filter: 该位置表示一个NodeFilter对象,或者一个表示应该接受还是拒绝某种特定节点的函数
-      - entityReferenceExpansion: 布尔值, 表示是否要扩展实体引用.这个参数在HTML页面中没有用,因为其中的实体引用不能扩展
+  - root: 想要作为搜素起点的树中节点
+  - whatToShow: 表示要访问哪些节点的数字代码
+  - filter: 该位置表示一个NodeFilter对象,或者一个表示应该接受还是拒绝某种特定节点的函数
+  - entityReferenceExpansion: 布尔值, 表示是否要扩展实体引用.这个参数在HTML页面中没有用,因为其中的实体引用不能扩展
 
   whatToShow常用取值,如下所示:
 
-      - NodeFilter.SHOW_ALL：所有类型节点；
-      - NodeFilter.SHOW_ELEMENT：元素；
-      - NodeFilter.SHOW_ATTRIBUTE：特性；
-      - NodeFilter.SHOW_TEXT：文本；
-      - NodeFilter.SHOW_COMMENT;
-      - NodeFilter.SHOW_DOCUMENT;
-      - NodeFilter.SHOW_DOCUMENT_TYPE;
+  - NodeFilter.SHOW_ALL：所有类型节点；
+  - NodeFilter.SHOW_ELEMENT：元素；
+  - NodeFilter.SHOW_ATTRIBUTE：特性；
+  - NodeFilter.SHOW_TEXT：文本；
+  - NodeFilter.SHOW_COMMENT;
+  - NodeFilter.SHOW_DOCUMENT;
+  - NodeFilter.SHOW_DOCUMENT_TYPE;
+      
 
 ``` js
 function getChildren2(parent){

@@ -1,9 +1,5 @@
----
-title: JavaScript 运算符鄙视题
-tags: JavaScript
-categories: 前端
-copyright: true
----
+# 运算符鄙视题
+
 在JS中 null>0为false,nul==0为false,为什么null>=0为true?
 
 解析: 至于深层次理论我探讨不了;

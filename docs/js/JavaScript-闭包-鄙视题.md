@@ -1,10 +1,3 @@
----
-title: JavaScript----闭包 鄙视题
-date: 2017-10-07 18:24:09
-tags: JavaScript
-categories: 前端
-copyright: true
----
 
 # 如题 
 

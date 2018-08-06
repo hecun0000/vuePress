@@ -1,12 +1,5 @@
----
-layout: pages
-title: let 关键字--简要了解
-date: 2017-10-07 11:45:40
-tags: JavaScript
-categories: 前端
-copyright: true
----
-## let<br> 
+# let 关键字--简要了解
+
 >可以声明一个块范围变量.可以将变量绑定到任意作用域中(通常是{......}的内部).即let为其声明的变量隐式的劫持了所在的块作用域内.  
 
 

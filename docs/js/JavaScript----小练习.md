@@ -1,9 +1,5 @@
----
-title: [JavaScript 小练习]
-tags: JavaScript
-categories: 前端
-copyright: true
----
+# JavaScript 小练习   
+
 最近在http://www.codewars.com上练习js的题, 受益颇多;
 
 1. 求数组中的最小值;  

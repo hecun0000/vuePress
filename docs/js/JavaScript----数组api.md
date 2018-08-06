@@ -1,9 +1,6 @@
----
-title: forEach、map、filter、some、every、find五个数组方法 
-tags: 前端  
-categories: css  
-copyright: true  
----
+
+
+# forEach、map、filter、some、every、find五个数组方法 
 
 - forEach() 方法对每一个元素执行一次提供的函数
 - map() 方法创建一个新数组, 其结果是该数组都执行一次函数, 原数组保持不变

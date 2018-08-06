@@ -1,9 +1,5 @@
----
-title: JavaScript---数组相关面试题
-tags: JavaScript
-categories: 前端
-copyright: true
----
+
+#  数组相关面试题
 
 ## 数组记忆
 

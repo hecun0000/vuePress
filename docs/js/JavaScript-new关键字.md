@@ -1,10 +1,4 @@
----
-title: JavaScript-new关键字
-date: 2017-10-08 10:12:51
-tags: JavaScript
-categories: 前端
-copyright: true
----
+
 # new 关键字  
 对象是某个特定引用对象的**实例**.新对象使用new操作符后面跟一个构造函数来创建的.构造函数本身就是一个普通函数,只不过该函数是由创建新对象的目的而被定义.  
 

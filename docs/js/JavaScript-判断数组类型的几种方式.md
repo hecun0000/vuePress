@@ -1,10 +1,3 @@
----
-title: JavaScript----判断数组类型的几种方式
-date: 2017-10-08 09:05:37
-tags: JavaScript
-categories: 前端
-copyright: true
----
 
 # 判断一个对象是不是数组?共有几种方式?
 解析: typeof: 只能区分原始类型的函数   

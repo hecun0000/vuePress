@@ -1,10 +1,5 @@
----
-title: es6----数字判断和转换 
-tags: 前端  
-categories: vue 
-copyright: true  
----
 
+# 数字判断和转换 
 ## 数字验证  
 Number.isFinite(xx)  
 一般对数字进行验证, 只要是数字, 不论是浮点型还是整型都会返回true, 其他的时候返回false.   
