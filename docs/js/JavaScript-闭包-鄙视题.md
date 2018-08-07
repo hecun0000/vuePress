@@ -47,7 +47,8 @@ var getName;
     getName()//5
     function getName() {
         alert (5);
-    }```
+    }
+```
 ### 函数表达式
 ```js
 var getName;
@@ -56,7 +57,7 @@ var getName;
     var getName = function() {
         alert (4);
     }
-    ```
+```
 那么, 答案也就很明确了, 为4. 
 
 ## 第三问  

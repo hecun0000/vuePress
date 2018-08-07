@@ -9,14 +9,17 @@ module.exports = {
     themeConfig: {
         nav: [
             { text: '主页', link: '/' },
-            {
-                text: '博文',
-                items: [
-                    { text: 'JS', link: '/js/' },
-                    { text: 'VUE', link: '/vue/' },
-                    { text: 'CSS', link: '/css/' }
-                ]
-            },
+            // {
+            //     text: '博文',
+            //     items: [
+            //         { text: 'JS', link: '/js/' },
+            //         { text: 'VUE', link: '/vue/' },
+            //         { text: 'CSS', link: '/css/' }
+            //     ]
+            // },
+            { text: 'JavaScript', link: '/js/' },
+            { text: 'VUE', link: '/vue/' },
+            { text: 'CSS', link: '/css/' },
             { text: '关于', link: '/about/' },
             { text: 'Github', link: 'https://github.com/hecun0000' },
         ],

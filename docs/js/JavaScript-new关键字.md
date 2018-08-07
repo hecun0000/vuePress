@@ -29,8 +29,7 @@ function Person(name,age){
 	this.sayName=function(){
 		alert(this.name);
 	};
-}```
-
+}
 	var person=new Person("张三",20);  
 //此处为 构造对象，构造对象的话，返回的新对象是由解析器自己生成的。  
 
@@ -38,6 +37,7 @@ function Person(name,age){
 //报错 person undefined 此处为普通函数调用，又没有给定返回值，出错。  
 
 	person.sayName();  
+```
 > 注意：构造函数在没有返回值的情况下，默认返回新对象实例。  
 
 则可以得出, 
