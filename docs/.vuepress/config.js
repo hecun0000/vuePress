@@ -1,10 +1,14 @@
+
 module.exports = {
     title: "hecun's blog",
-    description: '进击的程序源',
+    description: '进击的程序源-hecun',
+    keywords: '进击的程序源,hecun,禾寸',
     head: [
         ['link', { rel: 'icon', type: "image/x-icon", href: '/img/logo.ico' }],
         ['link', { rel: 'manifest', href: '/manifest.json' }],
         ['link', { rel: 'apple-touch-icon', href: '/img/logo.ico' }],
+        ['mate', { name: 'keywords', content: '进击的程序源,hecun,禾寸' }],
+        // ['script', { type: 'text/javascript', src: baidu }],
     ],
     themeConfig: {
         nav: [

@@ -2,33 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="abe42081-6a9e-402e-9257-06fda9ea916d" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/.vuepress/components/HomeLayout.vue" beforeDir="false" afterPath="$PROJECT_DIR$/docs/.vuepress/components/HomeLayout.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/.vuepress/components/main/index_bg_waves.vue" beforeDir="false" afterPath="$PROJECT_DIR$/docs/.vuepress/components/main/index_bg_waves.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docs/.vuepress/config.js" beforeDir="false" afterPath="$PROJECT_DIR$/docs/.vuepress/config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/css/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/css/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/html/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/html/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/html/html5--audio标签.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/html/html5--audio标签.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/js/JavaScript----ES6中某些API.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/js/JavaScript----ES6中某些API.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/js/JavaScript----bind().md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/js/JavaScript----bind().md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/js/JavaScript----indexOf() forEach() map方法重写.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/js/JavaScript----indexOf() forEach() map方法重写.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/js/JavaScript----let-关键字-简要了解.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/js/JavaScript----let-关键字-简要了解.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/js/JavaScript----在vue项目中使用token的身份验证.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/js/JavaScript----在vue项目中使用token的身份验证.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/js/JavaScript----小练习.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/js/JavaScript----小练习.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/js/JavaScript----数组 鄙视题.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/js/JavaScript----数组 鄙视题.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/js/JavaScript----数组api.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/js/JavaScript----数组api.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/js/JavaScript----运算符 鄙视题.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/js/JavaScript----运算符 鄙视题.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/js/JavaScript--数组排序.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/js/JavaScript--数组排序.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/js/JavaScript-new关键字.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/js/JavaScript-new关键字.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/js/JavaScript-this关键字.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/js/JavaScript-this关键字.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/js/JavaScript-判断数组类型的几种方式.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/js/JavaScript-判断数组类型的几种方式.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/js/JavaScript-闭包-鄙视题.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/js/JavaScript-闭包-鄙视题.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/js/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/js/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/js/es6----数字类型.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/js/es6----数字类型.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/js/wew.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/vue/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/vue/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/vue/中软面试题整理.md" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -43,11 +18,13 @@
     <session id="-2016713554">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="3" />
+          <entry key="project.closed" value="6" />
           <entry key="project.open.time.1" value="1" />
+          <entry key="project.open.time.134" value="1" />
           <entry key="project.open.time.5" value="1" />
-          <entry key="project.open.time.6" value="1" />
-          <entry key="project.opened" value="3" />
+          <entry key="project.open.time.6" value="2" />
+          <entry key="project.open.time.7" value="1" />
+          <entry key="project.opened" value="6" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -82,17 +59,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/docs/.vuepress/components/HomeLayout.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="276">
-              <caret line="12" column="12" selection-start-line="12" selection-start-column="12" selection-end-line="12" selection-end-column="12" />
+            <state relative-caret-position="480">
+              <caret line="20" column="16" selection-start-line="20" selection-start-column="16" selection-end-line="20" selection-end-column="16" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/docs/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="138">
+              <first_editor>
                 <caret line="6" column="3" selection-start-line="6" selection-start-column="3" selection-end-line="6" selection-end-column="3" />
               </first_editor>
               <second_editor />
@@ -103,17 +80,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/docs/.vuepress/components/main/index_bg_waves.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="619">
+            <state>
               <caret line="103" column="47" selection-start-line="103" selection-start-column="47" selection-end-line="103" selection-end-column="47" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/docs/.vuepress/config.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="368">
-              <caret line="25" column="34" selection-start-line="25" selection-start-column="34" selection-end-line="25" selection-end-column="34" />
+            <state relative-caret-position="384">
+              <caret line="19" column="54" lean-forward="true" selection-start-line="19" selection-start-column="54" selection-end-line="19" selection-end-column="54" />
             </state>
           </provider>
         </entry>
@@ -158,9 +135,9 @@
       <path value="$PROJECT_DIR$/package.json" />
     </packageJsonPaths>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
-    <option name="x" value="139" />
-    <option name="y" value="9" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="675" />
+    <option name="y" value="165" />
     <option name="width" value="1293" />
     <option name="height" value="1408" />
   </component>
@@ -209,6 +186,13 @@
               <item name="vuePress" type="462c0819:PsiDirectoryNode" />
               <item name="docs" type="462c0819:PsiDirectoryNode" />
               <item name=".vuepress" type="462c0819:PsiDirectoryNode" />
+              <item name="dist" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="vuePress" type="b2602c69:ProjectViewProjectNode" />
+              <item name="vuePress" type="462c0819:PsiDirectoryNode" />
+              <item name="docs" type="462c0819:PsiDirectoryNode" />
+              <item name=".vuepress" type="462c0819:PsiDirectoryNode" />
               <item name="public" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -223,7 +207,7 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="settings.editor.selected.configurable" value="Settings.JavaScript" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Color Scheme Font" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -250,18 +234,21 @@
       <workItem from="1533478812732" duration="979000" />
       <workItem from="1533479881796" duration="62000" />
       <workItem from="1533528822867" duration="4121000" />
+      <workItem from="1534660900489" duration="63000" />
+      <workItem from="1534661213031" duration="2887000" />
+      <workItem from="1534664643581" duration="202000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="5162000" />
+    <option name="totallyTimeSpent" value="8314000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="2576" height="1426" extended-state="7" />
+    <frame x="-8" y="-8" width="2576" height="1426" extended-state="6" />
     <layout>
       <window_info id="Favorites" order="0" side_tool="true" />
       <window_info id="npm" order="1" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="2" visible="true" weight="0.12460937" />
+      <window_info active="true" content_ui="combo" id="Project" order="2" visible="true" weight="0.11445312" />
       <window_info id="Structure" order="3" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" order="0" weight="0.32977912" />
       <window_info anchor="bottom" id="Event Log" order="1" side_tool="true" />
@@ -286,31 +273,17 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/docs/.vuepress/config.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="368">
-          <caret line="25" column="34" selection-start-line="25" selection-start-column="34" selection-end-line="25" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/docs/.vuepress/components/main/index_bg_waves.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="619">
-          <caret line="103" column="47" selection-start-line="103" selection-start-column="47" selection-end-line="103" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/docs/.vuepress/components/HomeLayout.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="276">
-          <caret line="12" column="12" selection-start-line="12" selection-start-column="12" selection-end-line="12" selection-end-column="12" />
+        <state relative-caret-position="480">
+          <caret line="20" column="16" selection-start-line="20" selection-start-column="16" selection-end-line="20" selection-end-column="16" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/docs/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="138">
+          <first_editor>
             <caret line="6" column="3" selection-start-line="6" selection-start-column="3" selection-end-line="6" selection-end-column="3" />
           </first_editor>
           <second_editor />
@@ -319,6 +292,20 @@
       <provider editor-type-id="text-editor">
         <state relative-caret-position="138">
           <caret line="6" column="3" lean-forward="true" selection-start-line="6" selection-start-column="3" selection-end-line="6" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/docs/.vuepress/components/main/index_bg_waves.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret line="103" column="47" selection-start-line="103" selection-start-column="47" selection-end-line="103" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/docs/.vuepress/config.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="384">
+          <caret line="19" column="54" lean-forward="true" selection-start-line="19" selection-start-column="54" selection-end-line="19" selection-end-column="54" />
         </state>
       </provider>
     </entry>
