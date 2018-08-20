@@ -1,2 +1,4 @@
 node_modules/
 doc/.vuepress/dist/
+.history/
+.idea/
