@@ -21,6 +21,7 @@
   outline: 0;
   transition: all 0.5s ease 0s;
   margin-top: 1rem; 
+  position: relative;
 }
 
 .jd .buy-now::before {
