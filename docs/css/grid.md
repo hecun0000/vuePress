@@ -1,6 +1,6 @@
 # Grid 布局初识
 
-目前都2018年。如今浏览器大部分已经开始支持grid的布局，作为一个前端狗，该学习一下了
+目前已经2018年了，浏览器大部分已经开始支持grid的布局，作为一个前端狗，是时候该学习一下了！
 
 ::: tip 基础知识
 
@@ -495,6 +495,120 @@ grid-row:   grid-row-start + grid-row-end的组合值
     grid-column: 1/4;
 }
 </style>
+
+更妙的是，在CSS Grid布局中可以直接定义网格区域，用来放置对应的网格项目。
+利用 grid-template-areas来声明区块的别名，然后使用grid-area调用声明好的网格区域名称来放置对应的网格项目。
+下面来一个5*4的网格： 
+```html
+<section class="grid">
+  <div class="title">title</div>
+  <div class="nav">nav</div>
+  <div class="main">main</div>
+  <div class="aside">aside</div>
+  <div class="footer">footer</div>
+</section>
+```
+```css
+.grid {
+  display: grid;
+  width: 100%;
+  max-width: 500px;
+  grid-template-columns: 100px 100px 100px 100px 100px;
+  grid-template-rows: 100px 100px 100px 100px;
+  grid-template-areas:  'title title title title aside' 
+                        'nav main main main aside' 
+                        'nav main main main aside' 
+                        'footer footer footer footer footer';
+}
+.title {
+  grid-area: title;
+}
+
+.nav {
+  grid-area: nav;
+}
+
+.main {
+  grid-area: main;
+}
+
+.aside {
+  grid-area: aside;
+}
+
+.footer {
+  grid-area: footer;
+}
+```
+简直不能在方便！！！
+
+
+<template>
+<section class="grid">
+  <div class="title">title</div>
+  <div class="nav">nav</div>
+  <div class="main">main</div>
+  <div class="aside">aside</div>
+  <div class="footer">footer</div>
+</section>
+</template>
+
+
+<style lang="scss">
+body {
+  padding-top: 40px;
+  background: #f5f7f8;
+}
+
+$bgColors: #b03532 #33a8a5 #30997a #6a478f #da6f2b;
+.grid {
+  display: grid;
+  width: 100%;
+  max-width: 500px;
+  grid-template-columns: 100px 100px 100px 100px 100px;
+  grid-template-rows: 100px 100px 100px 100px;
+  grid-template-areas:  'title title title title aside' 
+                        'nav main main main aside' 
+                        'nav main main main aside' 
+                        'footer footer footer footer footer';
+  div {
+    color: white;
+    font-size: 20px;
+    padding: 20px;
+    @for $i from 1 through length($bgColors) {
+      &:nth-child(#{$i}) {
+        background: nth($bgColors, $i);
+      }
+    }
+  }
+}
+
+.title {
+  grid-area: title;
+}
+
+.nav {
+  grid-area: nav;
+}
+
+.main {
+  grid-area: main;
+}
+
+.aside {
+  grid-area: aside;
+}
+
+.footer {
+  grid-area: footer;
+}
+
+
+
+</style>
+
+
+
 
 基础的用法先说到这里了！  
 
