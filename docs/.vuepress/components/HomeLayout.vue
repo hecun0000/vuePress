@@ -32,8 +32,8 @@ export default {
 
     .content-box {
         position: absolute;
-        width: 20rem;
-        height: 22rem;
+        width: 300px;
+        height: 350px;
         top: 0;
         bottom: 0;
         left: 0;
