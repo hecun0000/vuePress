@@ -1,6 +1,6 @@
 <template>
     <div class="contianer">
-        <div class="item" v-for="(item,index) in flexData" :key='index' @click='toggleOpen(index)' :class="{'open':item.open,'open-active':!item.open}">
+        <div class="item" v-for="(item,index) in flexData" :key='index' @click='toggleOpen(index)' :class="{'open':item.open,'open-active':item.open}">
             <div class="top">{{item.top}}</div>
             <div class="mid">{{item.mid}}</div>
             <div class="bottom">{{item.bottom}}</div>
@@ -57,9 +57,6 @@ export default {
   },
   methods: {
     toggleOpen(index) {
-      this.flexData.map(item => {
-        item.open = false;
-      });
       this.flexData[index].open = !this.flexData[index].open;
     }
   },
@@ -83,7 +80,9 @@ export default {
     justify-content: center;
     font-size: 20px;
     transition: font-size 0.7s cubic-bezier(0.61, -0.19, 0.7, -0.11),
-      flex 0.7s cubic-bezier(0.61, -0.19, 0.7, -0.11), background 0.2s;
+      flex 0.7s cubic-bezier(0.61, -0.19, 0.7, -0.11);
+    cursor: pointer;
+
 
     @for $i from 1 through length($bgColors) {
       &:nth-child(#{$i}) {
@@ -91,7 +90,7 @@ export default {
       }
     }
 
-    div {
+    > * {
       margin: 0;
       width: 100%;
       transition: transform 0.5s linear 0.7s;
@@ -108,15 +107,15 @@ export default {
         transform: translateY(100%);
       }
     }
-    .open-active {
-      &:first-child {
-        transform: translateY(0);
-      }
 
-      &:last-child {
-        transform: translateY(0);
-      }
+    &.open-active > *:first-child {
+      transform: translateY(0);
     }
+
+    &.open-active > *:last-child {
+      transform: translateY(0);
+    }
+
     div {
       font-size: 0.8em;
       opacity: 0.8;
