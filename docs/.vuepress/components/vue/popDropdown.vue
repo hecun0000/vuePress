@@ -1,6 +1,6 @@
 <template>
     <div id='down'>
-        <div class="main" v-clickoutside.esc="handleClose">
+        <div class="main" v-clickoutside.13="handleClose">
             <button @click="show=!show">点击显示下拉菜单</button>
             <div class="dropdown" v-show="show">
                 <p>下拉框中的内容，点击外面区域可以关闭</p>
@@ -33,7 +33,7 @@ export default {
           if (el.contains(e.target)) {
             return false;
           }
-
+          
           if (binding.expression) {
             binding.value(e);
           }

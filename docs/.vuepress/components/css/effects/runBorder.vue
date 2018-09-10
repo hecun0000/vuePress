@@ -1,6 +1,6 @@
 <template>
     <div  class="running">
-        <div class="container">
+        <div class="container1">
             hecun
         </div>
     </div>
@@ -22,7 +22,7 @@
   );
   animation: shine 3s infinite linear;
   padding: 1px;
-  .container {
+  .container1 {
     background-image: linear-gradient(to right, #74ebd5 0%, #9face6 100%);
   }
 }
