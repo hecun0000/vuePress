@@ -11,7 +11,7 @@
 
 思路有了，代码就相对比较简单：
 
-```VUE
+```html
 <template>
     <div  class="running">
         <div class="container1">

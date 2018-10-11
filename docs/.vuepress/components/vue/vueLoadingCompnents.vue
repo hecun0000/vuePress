@@ -44,8 +44,7 @@ $dotColor: #f36; // 圆点颜色著作权归作者所有。
       background-color: currentColor;
       border: 0 solid currentColor;
       display: inline-block;
-      border-radius: $dotRadius / 2;
-
+      border-radius: 100%;
     }
     @for $i from 1 through 14 {
       &:nth-child(#{$i}) {
