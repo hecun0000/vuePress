@@ -36,23 +36,23 @@
 ```
 下面是真实的浏览器的显示情况，为了方便观看，我给每一个item添加了一个border边框： 
 
-<div class="container">
-    <div class="item"></div>
-    <div class="item"></div>
-    <div class="item"></div>
-    <div class="item"></div>
-    <div class="item"></div>
+<div class="container0">
+    <div class="item0"></div>
+    <div class="item0"></div>
+    <div class="item0"></div>
+    <div class="item0"></div>
+    <div class="item0"></div>
 </div>
 
 
-<style>
-.container {
+<style scoped>
+.container0 {
     display: grid;
     height: 400px;
     width: 400px;
 }
 
-.item {
+.item0 {
     background: #3eaf7c;
     border: 1px solid #282c34;
 }
@@ -105,7 +105,7 @@ grid-template-rows：该属性是基于 网格行. 的维度，去定义网格�
 </div>
 
 
-<style>
+<style scoped>
 .container-1 {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -158,7 +158,7 @@ grid-template-rows：该属性是基于 网格行. 的维度，去定义网格�
 </div>
 
 
-<style>
+<style scoped>
 .container-2 {
     display: grid;
     height: 400px;
@@ -208,7 +208,7 @@ grid-row:   grid-row-start + grid-row-end的组合值
 </div>
 
 
-<style>
+<style scoped>
 .container-3 {
     display: grid;
     height: 400px;
@@ -285,7 +285,7 @@ grid-row:   grid-row-start + grid-row-end的组合值
 </div>
 
 
-<style>
+<style scoped>
 .container-4 {
     display: grid;
     height: 400px;
@@ -383,7 +383,7 @@ grid-row:   grid-row-start + grid-row-end的组合值
 </div>
 
 
-<style>
+<style scoped>
 .container-5 {
     display: grid;
     height: 400px;
@@ -455,7 +455,7 @@ grid-row:   grid-row-start + grid-row-end的组合值
 </div>
 
 
-<style>
+<style scoped>
 .container-6 {
     display: grid;
     height: 600px;
@@ -554,7 +554,7 @@ grid-row:   grid-row-start + grid-row-end的组合值
 </template>
 
 
-<style lang="scss">
+<style lang="scss" scoped>
 body {
   padding-top: 40px;
   background: #f5f7f8;
