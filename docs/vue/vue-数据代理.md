@@ -13,6 +13,21 @@
 - getter/setter 内部去操作data中对应的属性数据
 
 
+## 相关API简单介绍
+Object.defineProperty 接受三个参数： 
+
+- obj： 要在其上定义的对象
+- prop： 要定义或修改的属性名称
+- descriptor: 将被定义或修改的属性描述符
+    - configurable 定义该属性是否能被修改
+    - enumerable 定义该属性是否可以被枚举（for ... in 或 Object.keys()）
+    - value 定义该属性的值
+    - writable 定义该属性是否支持赋值运算 默认false
+    - get 当该属性被访问的时候会被执行 即读取属性
+    - set 当属性被修改的时候，触发执行该方法，接受的参数为新的属性值
+
+Object.defineProperty的详细介绍: [点击查看](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperty)
+
 
 主要html相关代码： 
 ```html 
@@ -72,4 +87,3 @@ class MVVM {
     }
 }
 ```
-

@@ -1,4 +1,5 @@
-# vue loading组件
+<!-- # vue loading组件 -->
 
 
-<vue-vueLoadingCompnents/>
+<!-- <vue-vueLoadingCompnents/> -->
+<vue-LoadingCompnents/>
