@@ -4,7 +4,6 @@
             <div class="item" v-for="(item,index) in dotNums" :key="index" :style="setBallState(index)">
                 <span :style="setBallRun(index)"></span>
             </div>
-        
         </div>
     </div>
 </template>
@@ -36,8 +35,7 @@ export default {
         'height': this.loadingSize+'px',
         'color': this.dotColor
       }
-    },
-    
+    }
   },
   methods: {
     setBallState(index) {
