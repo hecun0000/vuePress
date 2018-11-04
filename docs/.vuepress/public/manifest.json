@@ -1,14 +1,14 @@
 {
-    "name": "姜帅杰",
-    "short_name": "姜帅杰",
+    "name": "禾寸",
+    "short_name": "禾寸",
     "start_url": "index.html",
     "display": "standalone",
     "background_color": "#66ccff",
-    "description": "姜帅杰的个人主页",
+    "description": "禾寸的个人主页",
     "theme_color": "blue",
     "icons": [
       {
-        "src": "./logo.png",
+        "src": "./img/logo.png",
         "sizes": "144x144",
         "type": "image/png"
       }
@@ -16,10 +16,6 @@
     "related_applications": [
       {
         "platform": "web"
-      },
-      {
-        "platform": "play",
-        "url": "https://play.google.com/store/apps/details?id=cheeaun.hackerweb"
       }
     ]
   }

@@ -60,6 +60,11 @@
 既然样式已经写好了，，让我改成原生的，，想多了。。   
 现在可以借助js中的 FormData 对象  
 
+::: tip FormData 
+FormData是为序列化表单以及创建表单格式相同的数据（用于通过XHR传输）提供一种解决方案。
+:::
+
+
 ```js
 this.uploadForm = new FormData();
 this.uploadForm.append('mch_id', this.newform.PartnerId);
@@ -111,8 +116,7 @@ export function wxpayConfigSave(data) {
 ```
 
 一切都准备好了，点击按钮会发现挂了。。。    
-
-![image](http://oxi9lrcsm.bkt.clouddn.com/mmexport1541224058352.gif)
+![image](http://oxi9lrcsm.bkt.clouddn.com/mmexport1541224058352.gif?center)
 
 仔细盘查后。。。
 
@@ -170,5 +174,3 @@ newSubmitFrom() {
     this.$refs.sslkeyFile.submit()
 }
 ```
-
-
