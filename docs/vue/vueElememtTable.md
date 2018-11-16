@@ -3,7 +3,7 @@
 ## 需求及效果展示
 
 在商品创建中，不可避免会出现商品的规格生成。效果如图:
-![avatar](http://oxi9lrcsm.bkt.clouddn.com/TIM%E6%88%AA%E5%9B%BE20180821111448.png)
+![avatar](http://static.hecun.site/TIM%E6%88%AA%E5%9B%BE20180821111448.png)
 ## sku的生成
 
 <!-- <js-bishi/> -->

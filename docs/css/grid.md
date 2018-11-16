@@ -634,7 +634,7 @@ $bgColors: #b03532 #33a8a5 #30997a #6a478f #da6f2b;
     grid-gap: 5px;
 }
 .box > div{
-    background: url(http://oxi9lrcsm.bkt.clouddn.com/51217728_p0.jpg) no-repeat;
+    background: url(http://static.hecun.site/51217728_p0.jpg) no-repeat;
     background-size:contain;
     color:#fff;
     font-size: 30px;

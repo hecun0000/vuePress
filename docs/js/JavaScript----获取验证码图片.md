@@ -2,10 +2,10 @@
 
 在做登录注册的过程中，碰到了一次关于验证码的问题。后端的接口返回的数据中，只有一个二进制的图片，而所用到的参数放在了响应头里面。。。
 
-![image](http://oxi9lrcsm.bkt.clouddn.com/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20181104220905.png)
+![image](http://static.hecun.site/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20181104220905.png)
 
 其中，响应头中的sekey参数，要做为后端判断验证码的标识使用。。。
-![image](http://oxi9lrcsm.bkt.clouddn.com/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20181104220937.png)
+![image](http://static.hecun.site/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20181104220937.png)
 
 我们要做的是将二进制图片转化为图片链接，并通过img标签呈现给用户。。。
 
@@ -68,7 +68,7 @@ Blob 对象表示一个不可变、原始数据的类文件对象。Blob 表示�
 
 Blob URL可以通过URL.createObjectURL(blob)创建。在绝大部分场景下，我们可以像使用Http协议的URL一样，使用Blob URL。常见的场景有：作为文件的下载地址和作为图片资源地址。
 
-![image](http://oxi9lrcsm.bkt.clouddn.com/TIM%E6%88%AA%E5%9B%BE20181104231009.png)
+![image](http://static.hecun.site/TIM%E6%88%AA%E5%9B%BE20181104231009.png)
 
 ## 获取响应头中的数据
  

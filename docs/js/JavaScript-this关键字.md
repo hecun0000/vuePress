@@ -1,7 +1,7 @@
 
 # this关键字
 
-<img src="http://oxi9lrcsm.bkt.clouddn.com/56697596_p0.jpg" alt="" style="width: 100%">
+<img src="http://static.hecun.site/56697596_p0.jpg" alt="" style="width: 100%">
   
 this到底是一种什么机制?  
 this是在运行时进行绑定的,并不是在编写的时候进行绑定的,它的上下文取决于函数调用时的各种条件.this的绑定和函数声明的位置没有任何关系,只取决于**函数调用时的方式**也被称为调用位置.  

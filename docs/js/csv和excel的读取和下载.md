@@ -61,11 +61,11 @@ reader.onload = function () {
 **读取图片**   
 
 
-![image](http://oxi9lrcsm.bkt.clouddn.com/IMG.png)
+![image](http://static.hecun.site/IMG.png)
 
 **读取csv文件**   
 
-![image](http://oxi9lrcsm.bkt.clouddn.com/csv.png)
+![image](http://static.hecun.site/csv.png)
 
     在利用readAsText进行读取的时候，要指定一下编码形式。如readAsText(files[0], 'gb2312');   
     
@@ -123,7 +123,7 @@ function textToCsv(data) {
 ```
 **效果图如下：**   
 
-![image](http://oxi9lrcsm.bkt.clouddn.com/csvout.png)
+![image](http://static.hecun.site/csvout.png)
 
 ## 既然都读取出来，下载？  
 
@@ -204,7 +204,7 @@ function saveAs(obj, fileName) {
 [演示链接](https://hecun0000.github.io/Jcss/file/csvDownload.html)  
 **效果图**    
 
-![image](http://oxi9lrcsm.bkt.clouddn.com/csv12321.png)
+![image](http://static.hecun.site/csv12321.png)
 
 另外，
 将json文件转化为csv格式可以利用[json2csv](https://github.com/zemirco/json2csv)
@@ -263,7 +263,7 @@ function fixedData(data) {
 ```
 
 效果图预览： 
-![image](http://oxi9lrcsm.bkt.clouddn.com/xlsxsave.png)
+![image](http://static.hecun.site/xlsxsave.png)
 [查看演示](https://hecun0000.github.io/Jcss/file/xlsxRead.html)
 
 附上一个vue-element-admin关于Excel文件读取的源码：
@@ -315,7 +315,7 @@ var wb = {
 
 这里将转化后的结果打印出来   
 
-![image](http://oxi9lrcsm.bkt.clouddn.com/微信截图_20180610122553.png)   
+![image](http://static.hecun.site/微信截图_20180610122553.png)   
 
 !ref: 表示表格输出的范围   
 A1-Zx: 这些就对应的是Excel中单元格的位置；

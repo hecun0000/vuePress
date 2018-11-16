@@ -52,7 +52,8 @@
     </el-form>
 </div>
 ```
-用框架写布局样式都不用怎么写。。。完美。。
+用框架写布局样式都不用怎么写。。。完美。。    
+![image](http://static.hecun.site/TIM%E6%88%AA%E5%9B%BE20181105095535.png)
 
 ## 完善功能
 
@@ -116,7 +117,7 @@ export function wxpayConfigSave(data) {
 ```
 
 一切都准备好了，点击按钮会发现挂了。。。    
-![image](http://oxi9lrcsm.bkt.clouddn.com/mmexport1541224058352.gif?center)
+![image](http://static.hecun.site/mmexport1541224058352.gif?center)
 
 仔细盘查后。。。
 
