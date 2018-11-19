@@ -3,7 +3,7 @@
         <div class="content-box">
             <h2 class="title">hecun</h2>
 
-            <img src="../public/img/hecun.jpg" alt="" class="logo">
+            <img src="http://static.hecun.site/hecun.321c947a.jpg" alt="" class="logo">
             <p class="info">生命不息   奋斗不止</p>
             <div class="btn-list">
                 <a href="/js/">JavaScript</a>
