@@ -1,5 +1,6 @@
 # JavaScript
 
+##### [node笔记](/js/node笔记.md)
 ##### [日常踩坑之获取验证码图片](/js/JavaScript----获取验证码图片.md)
 ##### [node.js学习笔记](/js/nodeDemo.md)
 ##### [csv和excel的读取和下载](/js/csv和excel的读取和下载.md)
