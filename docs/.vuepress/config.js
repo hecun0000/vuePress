@@ -25,6 +25,7 @@ module.exports = {
             { text: 'JavaScript', link: '/js/' },
             { text: 'VUE', link: '/vue/' },
             { text: 'CSS', link: '/css/' },
+            { text: 'node', link: '/node/' },
             { text: '关于', link: '/about/' },
             { text: 'Github', link: 'https://github.com/hecun0000' },
         ],
