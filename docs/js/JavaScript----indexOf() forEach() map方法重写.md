@@ -1,3 +1,6 @@
+---
+sidebar: auto
+---
 
 # JavaScript-鄙视题之indexOf() forEach() map方法重写
 ## 请重写indexOf()方法 #

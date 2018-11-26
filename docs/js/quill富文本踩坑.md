@@ -1,3 +1,7 @@
+---
+sidebar: auto
+---
+
 # quill 富文本踩坑
 
 > 首先，给出官网的链接 [点击此处](https://quilljs.com/docs/quickstart/)

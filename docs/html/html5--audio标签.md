@@ -1,4 +1,6 @@
-
+---
+sidebar: auto
+---
 
 # html5 中audio标签的使用
 

@@ -1,3 +1,6 @@
+---
+sidebar: auto
+---
 # css 按钮
 
 ## 样式1： 

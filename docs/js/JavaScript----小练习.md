@@ -1,3 +1,7 @@
+---
+sidebar: auto
+---
+
 # JavaScript 小练习   
 
 最近在http://www.codewars.com上练习js的题, 受益颇多;

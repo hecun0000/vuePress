@@ -1,3 +1,7 @@
+---
+sidebar: auto
+---
+
 # 从在vue项目中使用token的身份验证    
 ## 工作原理  
 

@@ -1,3 +1,7 @@
+---
+sidebar: auto
+---
+
 # node的学习笔记[一]
 
 ## 了解node web程序的结构

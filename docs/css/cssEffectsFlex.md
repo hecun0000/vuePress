@@ -1,3 +1,6 @@
+---
+sidebar: auto
+---
 # 来一个效果
 
 ::: tip 

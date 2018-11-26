@@ -1,3 +1,6 @@
+---
+sidebar: auto
+---
 
 # this关键字
 

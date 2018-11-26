@@ -3,6 +3,7 @@ title: Vue----计算属性
 tags: Vue
 categories: 前端
 copyright: true
+sidebar: auto
 ---
 # Vue----计算属性  
 

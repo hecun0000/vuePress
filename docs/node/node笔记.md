@@ -1,4 +1,6 @@
-
+---
+sidebar: auto
+---
 
 ## 安装
 本人系统为deepin的系统： 
@@ -27,15 +29,15 @@ export PATH=$PATH:/usr/local/mongodb/bin
 - show collections; 查看该数据库下所有集合
 
 ### 查询
-db.user.find(); 查询当前数据库下user合集中所有数据
-db.user.findOne(); 查询当前数据库下user合集中一条数据 
-db.user.find({"name":"hecun"}); 查询当前数据库下user合集中name为hecun的数据
+db.user.find(); 查询当前数据库下user合集中所有数据   
+db.user.findOne(); 查询当前数据库下user合集中一条数据   
+db.user.find({"name":"hecun"}); 查询当前数据库下user合集中name为hecun的数据  
 
 
 ### 插入
 db.user.insert({"name":"李华"}); 向user合集中添加一条数据 
 
-## 修改
+### 修改
 db.user.update({"name":"hecun",{"name":"hecun","age":18}}); 将user集合中的name为hecun的数据添加一个age为18的属性； 
 
 

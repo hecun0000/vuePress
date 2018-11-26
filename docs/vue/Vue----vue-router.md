@@ -1,10 +1,13 @@
-
 ---
+sidebar: auto
+---
+
+<!-- ---
 title: vue-router 懒加载--首屏加载时间优化 
 tags: 前端  
 categories: vue  
 copyright: true  
----
+--- -->
 
 > vue路由懒加载，当页面组件过多的时候，webpack的打包文件就会十分巨大。解决首屏加载时间尤为重要。  
 

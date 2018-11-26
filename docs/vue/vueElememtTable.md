@@ -1,3 +1,6 @@
+---
+sidebar: auto
+---
 # elementUI下sku生成和table组件的单元框合并
 
 ## 需求及效果展示

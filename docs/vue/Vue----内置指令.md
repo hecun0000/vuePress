@@ -3,7 +3,9 @@ title: Vue----内置指令
 tags: Vue
 categories: 前端
 copyright: true
+sidebar: auto
 ---
+
 # Vue----内置指令 
 
 ### 基本指令   

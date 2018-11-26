@@ -1,7 +1,6 @@
 # JavaScript
 
 ##### [日常踩坑之获取验证码图片](/js/JavaScript----获取验证码图片.md)
-##### [node.js学习笔记](/js/nodeDemo.md)
 ##### [csv和excel的读取和下载](/js/csv和excel的读取和下载.md)
 ##### [quill富文本踩坑](/js/quill富文本踩坑.md)
 ##### [将html转化为图片并下载](/js/html2canvas.md)

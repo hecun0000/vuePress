@@ -1,3 +1,6 @@
+---
+sidebar: auto
+---
 
 
 # javascript 常用的数组API

@@ -1,3 +1,7 @@
+---
+sidebar: auto
+---
+
 # html2canvas
 
 ## 项目运行

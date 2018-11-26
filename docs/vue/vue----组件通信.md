@@ -3,6 +3,7 @@ title: vue----组件通信
 tags: 前端  
 categories: vue 
 copyright: true  
+sidebar: auto
 ---
 > 父组件: 用于数据管理
 > 子组件: 用于数据的展示    
