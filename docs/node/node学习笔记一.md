@@ -135,4 +135,152 @@ app.listen(app.get('port'), () => {
 
 module.exports = app
 ```
-这样以来，和web程序已经差不多了。但是还差两步，一将数据永久的希尔数据库中，二将网上找的版本生成一个可读版本。
+这样以来，和web程序已经差不多了。但是还差两步，一将数据永久的存在数据库中，二将网上找的版本生成一个可读版本。
+
+## 添加数据库
+这里使用SQLite来实现上述功能，新建db.js文件:
+
+```js
+//  连接数据库文件
+const sqlite3 = require('sqlite3').verbose()
+const dbName = 'later.sqlite'
+const db = new sqlite3.Database(dbName)
+
+// 如果没有，创建一个 articles 表
+db.serialize(() => {
+    const sql = `
+        CREATE TABLE IF NOT EXISTS articles (
+            id integer primary key, title , content TEXT 
+        )
+    `
+    db.run(sql)
+})
+
+class Article {
+    // 获取所有文章
+    static all(cb) {
+        db.all('SELECT * FROM articles', cb)
+    }
+    // 获取指定文章
+    static find(id, cb) {
+        db.get('SELECT * FROM articles WHERE id = ?', id, cb)
+    }
+    // 新建文章
+    static create(data, cb) {
+        const sql = 'INSERT INTO articles(title , content) VALUES (? , ?)'
+        db.run(sql, data.title, data.content, cb)
+    }
+    // 删除文章
+    static delete(id, cb) {
+        if (!id) return cb(new Error('Please provide an id'))
+        db.run('DELETE FROM articles WHERE id = ?', id, cb)
+    }
+}
+
+module.exports = db
+module.exports.Article = Article
+```
+然后修改之前写好的index.js，添加相应的操作；
+
+```js
+const express = require('express')
+const bodyParser = require('body-parser')
+const Article = require('./db').Article
+
+const app = express()
+
+// 设置端口
+app.set('port', process.env.PORT || 3000)
+
+// 支持编码为JSON的请求消息体
+app.use(bodyParser.json())
+// 支持编码为表单的请求消息体
+app.use(bodyParser.urlencoded({ extended: true }))
+
+// 获取所有文章
+app.get('/articles', (req, res, next) => {
+    Article.all((err, articles) => {
+        if (err) return next(err)
+        res.send(articles)
+    })
+})
+// 创建一篇新文章
+app.post('/articles', (req, res, next) => {
+    Article.create(
+        { title: req.body.title, content: req.body.content },
+        (err, article) => {
+        if (err) return next(err)
+        res.send('OK')
+    })
+})
+// 获取指定文章
+app.get('/articles/:id', (req, res, next) => {
+    const id = req.params.id
+    Article.find(id, (err, article) => {
+        if (err) return next(err)
+        res.send(article)
+    })
+})
+// 删除指定文章
+app.delete('/articles/:id', (req, res, next) => {
+    const id = req.params.id
+    Article.delete(id, (err) => {
+        if (err) return next(err)
+        res.send({ message: 'Deleted' })
+    })
+})
+
+app.listen(app.get('port'), () => {
+    console.log("app started on port", app.get('port'))
+})
+
+module.exports = app
+```
+经过在postMan上面简单的测试了一下，都没什么问题，就这样数据就可以永久的保存下来了。
+
+
+不得不说SQLite数据库搭配vs code 还是意外的合适。  
+![2018112623853](http://static.hecun.site/2018112623853.png)
+
+
+## 添加用户界面
+
+这里采用ejs进行模板渲染，首先安装```npm install ejs --save```;
+利用res.render渲染EJS格式的html文件
+其中 articles.ejs如下：
+```js
+<% include head %>
+    <ul>
+        <% articles.forEach((article)=> { %>
+            <li>
+                <a href="/articles/<%=article.id %>">
+                    <%= article.title %>
+                </a>
+            </li>
+        <% }) %>
+    </ul>
+<% include foot %>
+```
+head.ejs:
+```js
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+```
+foot.ejs:  
+```js 
+    </div>
+</body>
+</html>
+```
+需要注意的是, 需要在项目的根目录下建立一个views的文件夹，来存放ejs渲染模板。
+看一下效果：  
+![20181126225933](http://static.hecun.site/20181126225933.png)
+如果需要复杂的样式，可以用使用bootstrap等，这里就不做相应的介绍了。
