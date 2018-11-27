@@ -283,4 +283,25 @@ foot.ejs:
 需要注意的是, 需要在项目的根目录下建立一个views的文件夹，来存放ejs渲染模板。
 看一下效果：  
 ![20181126225933](http://static.hecun.site/20181126225933.png)
-如果需要复杂的样式，可以用使用bootstrap等，这里就不做相应的介绍了。
+如果需要复杂的样式，可以用使用bootstrap等，这里就不做相应的介绍了。  
+
+## 最后
+在简单说一下node-SQLite3的相关api:    
+- new sqlite3.Database(filename,[mode],[callback])   
+    返回数据库对象并且自动打开和连接数据库
+- sqlite3.verbose()   
+    集成数据库的执行模式，以便于调试，它没有重置的方法。
+- Database#run(sql,param,...],[callback])   
+    运行指定参数的SQL语句，完成之后调用回调函数，它不返回任何数据，在回调函数里面有一个参数，SQL语句执行成功，则参数的值为null,反之为一个错误的对象，它返回的是数据库的操作对象。在这个回调函数里面当中的this,里面包含有lastId(插入的ID)和change(操作影响的行数,如果执行SQL语句失败，则change的值永远为0);
+-  Database#get(sql,[param,...],[callback])   
+    运行指定参数的SQL语句，完成过后调用回调函数。如果执行成功，则回调函数中的第一个参数为null,第二个参数为结果集中的第一行数据，反之则回调函数中只有一个参数，只参数为一个错误的对象。
+- Database#all(sql,[param,...],[callback])   
+    运行指定参数的SQL语句，完成过后调用回调函数。如果执行成功，则回调函数中的第一个参数为null,第二个参数为查询的结果集，反之，则只有一个参数，且参数的值为一个错误的对象。
+- Database#prepare(sql,[param,...],[callback])   
+    预执行绑定指定参数的SQL语句，返回一个Statement对象，如果执行成功，则回调函数的第一个参数为null,反之为一个错误的对象。
+- Database#close([callback])    
+    关闭和释放数据库对象
+- Database#serialize([callback])
+    如果提供回调，它将立即被调用，即此方法的回调不是异步回调。在该回调中调度的所有数据库语句将被序列化运行，即一个接一个地执行。 函数返回后，数据库将再次设置为其原始模式。
+-  Database#parallelize([callback])
+    如果提供回调，它将立即被调用，即此方法的回调不是异步回调。在该回调中调度的所有数据库语句将并行运行。函数返回后，数据库将再次设置为其原始模式。
