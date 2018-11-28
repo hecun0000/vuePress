@@ -2,7 +2,7 @@
 sidebar: auto
 ---
 
-# node的学习笔记[一]
+# node的学习笔记之起步
 
 ## 了解node web程序的结构
 典型的node web的程序会由下面几个部分组成： 

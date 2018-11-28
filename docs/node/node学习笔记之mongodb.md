@@ -1,6 +1,7 @@
 ---
 sidebar: auto
 ---
+# node学习笔记之mongodb
 
 ## 安装
 本人系统为deepin的系统： 
