@@ -103,3 +103,73 @@ print('demo batch runTime is ' + batchRunTime + 'ms')
 demo runTime is 198ms
 demo batch runTime is 6ms
 ```
+## update相关
+
+### 基本错误
+首先，插入一条测试数据。
+然后，将user集合中，王司徒的朋友改为曹操。先试着执行下
+```js
+var db = connect('hecun')
+// 插入
+db.user.insert({"name":"王司徒","friend":"诸葛亮"})
+// 修改
+db.user.update({"name": "王司徒"},{"friend": "曹操"})
+```
+结果呢，update会将王司徒的整条数据进行替换，而不是只改朋友这个属性： 
+
+![2018112992318](http://static.hecun.site/2018112992318.png)
+
+然后，进行修改下： 
+```js
+var db = connect('hecun')
+// 插入
+db.user.insert({"name":"王司徒","friend":"诸葛亮"})
+// 修改
+db.user.update({"name": "王司徒"},{"name": "王司徒","friend": "曹操"})
+```
+显然，这样就好了，但是感觉是有点麻烦。。
+
+![201811299335](http://static.hecun.site/201811299335.png)
+
+### update修改器
+
+$set 修改某一个属性   
+```js
+var db = connect('hecun')
+// 插入
+db.user.insert({"name":"王司徒1","friend":"诸葛亮"})
+// 修改
+db.user.update({"name": "王司徒1"},{$set:{"friend": "曹操"}})
+// 插入
+db.user.insert({"name":"王司徒3","skill":{"one":"厚颜无耻","two":"骂街"}})
+
+db.user.update({"name": "王司徒3"},{$set:{"skill.two": "快嘴"}})
+```
+查看效果: 
+![2018112910526](http://static.hecun.site/2018112910526.png)
+
+$unset 用于将key删除   
+```js
+db.user.update({"name": "王司徒3"},{$unset:{"skill.two": "快嘴"}})
+```
+
+$inc 对数字进行计算   
+所操作的属性值必须为number类型： 
+```js
+db.user.insert({"name":"王司徒4","friend":"诸葛亮","age":18})
+db.user.update({"name":"王司徒4"},{$inc:{"age": +30}})
+```
+multi 批量操作   
+
+对user集合中，所有friend为曹操，添加一个爱好的属性：
+```js
+// 插入
+db.user.update({"friend":"曹操"},{$set:{"interest": []}},{multi:true})
+```
+multi是有两个值：true代表全部修改，false代表只修改一个（默认值）
+
+upsert 在更新找不到数据时，会直接插入一条新数据
+upsert有两个值：true代表没有就添加，false代表没有不添加(默认值)。
+```js
+db.user.update({"name":"王朗"},{$set:{"age": 20}},{upsert:true})
+```
