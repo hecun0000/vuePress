@@ -9,7 +9,7 @@ sidebar: auto
 下载地址： https://fastdl.mongodb.org/linux/mongodb-linux-x86_64-4.0.4.tgz
 
 1. 解压 ```tar -zxvf mongodb-linux-x86_64-2.6.0.tgz```
-2. 更改安装目录到/usr/local下：  ```tar -zxvf mongodb-linux-x86_64-2.6.0.tgz```
+2. 更改安装目录到/usr/local下：  ```mv mongodb-linux-x86_64-2.6.0.tgz /usr/local```
 3. 创建mongodb的数据库存放路径：``` mkdir -p /data/db ```
 4. 创建mongodb数据库日志存放路径：```mkdir -p /usr/local/mongodb/log/```（存放在安装路径下）
 5. 添加path：
