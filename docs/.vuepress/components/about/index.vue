@@ -15,28 +15,22 @@
         type="file"
         accept="image/jpg, image/jpeg, image/png"
         class="file"
+        multiple="multiple"
         @change="slecetFile"
         title=" "
       >
     </div>
     <div class="file-box">
-        <p class="file-title">
-            文件列表
-        </p>
-        <ul class="file-list">
-            <li class="item" v-for="(item,index) in fileList" :key="index">
-                <img :src="item" alt="" srcset="">
-                <div class="img-info-box">
-                     <span class="img-src">
-                    {{item}}
-                </span>
-                <span class="btn-copy" @click="copySrc(item)">
-                    复制
-                </span>
-                </div>
-               
-            </li>
-        </ul>        
+      <p class="file-title">文件列表</p>
+      <ul class="file-list">
+        <li class="item" v-for="(item,index) in fileList" :key="index">
+          <img :src="item" alt srcset>
+          <div class="img-info-box">
+            <span class="img-src">{{item}}</span>
+            <span class="btn-copy" @click="copySrc(item)">复制</span>
+          </div>
+        </li>
+      </ul>
     </div>
   </div>
 </template>
@@ -45,13 +39,14 @@
 export default {
   data() {
     return {
-      pic: "",
+      pics: [],
       url: "http://upload.qiniup.com/putb64/-1/",
       imgUrl: "http://img.hecun.site/",
       apiUrl: "http://api.hecun.site/token",
       imgSrc: "",
       keyname: "",
-      fileList:[]
+      fileList: [],
+      upToken: ""
     };
   },
   mounted() {},
@@ -60,6 +55,7 @@ export default {
     dragenter(e) {
       e.stopPropagation();
       e.preventDefault();
+     
     },
 
     dragover(e) {
@@ -70,14 +66,15 @@ export default {
     drop(e) {
       e.stopPropagation();
       e.preventDefault();
-      const files = e.dataTransfer.files[0];
+      console.log(e.dataTransfer.files);
+     this.pics = [];
+      const files = e.dataTransfer.files;
       this.initData(files);
-      this.upload();
     },
-     slecetFile(e) {
-      let files = e.target.files[0];
+    slecetFile(e) {
+      this.pics = [];
+      let files = e.target.files;
       this.initData(files);
-      this.upload();
     },
     upload() {
       let that = this;
@@ -87,7 +84,8 @@ export default {
           let res = JSON.parse(xhr.responseText);
           let uptoken = res.token;
           console.log(uptoken);
-          that.uploadimg(uptoken);
+          that.upToken = uptoken;
+          that.multipleUpload();
         }
       };
 
@@ -95,56 +93,67 @@ export default {
       xhr.setRequestHeader("Content-Type", "application/json");
       xhr.send();
     },
-    uploadimg(uptoken) {
+
+    multipleUpload() {
+      let length = this.pics.length;
+      for (const { base64, keyname } of this.pics) {
+        this.uploadimg(base64, keyname);
+      }
+    },
+    uploadimg(base64, keyname) {
       let that = this;
-      let sendUrl = this.url + "key/" + window.btoa(this.keyname);
-      console.log(sendUrl);
+      let sendUrl = this.url + "key/" + window.btoa(keyname);
 
       let xhr = new XMLHttpRequest();
       xhr.onreadystatechange = function() {
         if (xhr.readyState == 4) {
           let returnObj = JSON.parse(xhr.responseText);
-          console.log(returnObj);
-          console.log("图片地址" + that.imgUrl + returnObj.key);
+    
           that.imgSrc = that.imgUrl + returnObj.key;
-          that.fileList.push(that.imgSrc)
+          that.fileList.push(that.imgSrc);
         }
       };
 
       xhr.open("POST", sendUrl, true);
       xhr.setRequestHeader("Content-Type", "application/octet-stream");
-      xhr.setRequestHeader("Authorization", "UpToken " + uptoken);
-      xhr.send(this.pic);
+      xhr.setRequestHeader("Authorization", "UpToken " + that.upToken);
+      xhr.send(base64);
     },
-
     initData(files) {
-      let reader = new FileReader();
+      for (let i = 0; i < files.length; i++) {
+        const file = files[i];
+        let reader = new FileReader();
 
-      reader.readAsDataURL(files);
-      let fileName = files.name;
-      let filetype = fileName.slice(fileName.lastIndexOf("."));
+        reader.readAsDataURL(file);
+        let fileName = file.name;
+        let filetype = fileName.slice(fileName.lastIndexOf("."));
 
-      this.keyname =
-        "blog" +
-        new Date().getTime() +
-        Math.floor(Math.random() * 100) +
-        filetype;
+        let keyname =
+          "blog" +
+          new Date().getTime() +
+          Math.floor(Math.random() * 100) +
+          filetype;
 
-      let that = this;
-      reader.onload = function() {
-        that.pic = this.result.replace(/^(data\:image\/)+(\S)+;base64\,/, "");
-      };
+        let that = this;
+        reader.onload = function() {
+          that.pics.push({
+            base64: this.result.replace(/^(data\:image\/)+(\S)+;base64\,/, ""),
+            keyname: keyname
+          });
+        };
+      }
+      this.upload();
     },
-    copySrc(item){
-        var oInput = document.createElement('input');
-        oInput.value = item;
-        document.body.appendChild(oInput);
-        oInput.select(); // 选择对象
-        document.execCommand("Copy"); // 执行浏览器复制命令
-        oInput.className = 'oInput';
-        oInput.style.display='none';
-        alert('复制成功');
-    }   
+    copySrc(item) {
+      var oInput = document.createElement("input");
+      oInput.value = item;
+      document.body.appendChild(oInput);
+      oInput.select(); // 选择对象
+      document.execCommand("Copy"); // 执行浏览器复制命令
+      oInput.className = "oInput";
+      oInput.style.display = "none";
+      alert("复制成功");
+    }
   }
 };
 </script>
@@ -209,56 +218,55 @@ export default {
 }
 
 .info-box .info-text {
-    font-size: 14px;
+  font-size: 14px;
 }
 
 .file-box {
-    max-width: 800px;
-    margin: 0 auto;
+  max-width: 800px;
+  margin: 0 auto;
 }
 
 .file-box .file-title {
-    font-size: 16px;
-    color: #3eaf7c;
-    text-align: center;
-    line-height: 32px;
+  font-size: 16px;
+  color: #3eaf7c;
+  text-align: center;
+  line-height: 32px;
 }
 
 .file-box .item {
-    height: 80px;
-    border:1px solid #eee;
-    border-left: 0;
-    border-right: 0;
-    margin-bottom: 10px;
-    display: flex;
-    align-items: center;
+  height: 80px;
+  border: 1px solid #eee;
+  border-left: 0;
+  border-right: 0;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
 }
 
-
 .file-box .item img {
-    width: 60px;
-    height: 60px;
-    display: inline-block;
+  width: 60px;
+  height: 60px;
+  display: inline-block;
 }
 
 .file-box .img-src {
-    font-size: 14px;
-    color: #666;
+  font-size: 14px;
+  color: #666;
 }
 
 .file-box .btn-copy {
-     color: #3eaf7c;
-     cursor: pointer;
+  color: #3eaf7c;
+  cursor: pointer;
 }
 
 .file-box .btn-copy:hover {
-    color: #319065;
+  color: #319065;
 }
 
 .img-info-box {
-    flex: 1;
-    display: flex;
-    padding: 0 10px;
-    justify-content: space-between;
+  flex: 1;
+  display: flex;
+  padding: 0 10px;
+  justify-content: space-between;
 }
 </style>
