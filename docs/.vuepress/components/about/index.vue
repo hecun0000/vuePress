@@ -20,7 +20,7 @@
         title=" "
       >
     </div>
-    <div class="file-box">
+    <div class="file-box" v-if="fileList.length>0">
       <p class="file-title">文件列表</p>
       <ul class="file-list">
         <li class="item" v-for="(item,index) in fileList" :key="index">
@@ -55,7 +55,6 @@ export default {
     dragenter(e) {
       e.stopPropagation();
       e.preventDefault();
-     
     },
 
     dragover(e) {
@@ -67,7 +66,7 @@ export default {
       e.stopPropagation();
       e.preventDefault();
       console.log(e.dataTransfer.files);
-     this.pics = [];
+      this.pics = [];
       const files = e.dataTransfer.files;
       this.initData(files);
     },
@@ -108,7 +107,7 @@ export default {
       xhr.onreadystatechange = function() {
         if (xhr.readyState == 4) {
           let returnObj = JSON.parse(xhr.responseText);
-    
+
           that.imgSrc = that.imgUrl + returnObj.key;
           that.fileList.push(that.imgSrc);
         }
