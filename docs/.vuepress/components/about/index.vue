@@ -1,24 +1,12 @@
 <template>
   <div>
     <!-- 这是以一个自定义页面，有一些自定义内容 -->
-    <div
-      class="upload-box"
-      @dragstart="dragenter($event)"
-      @drop="drop($event)"
-      @dragover="dragover($event)"
-    >
+    <div class="upload-box"  @dragstart="dragenter($event)"  @drop="drop($event)" @dragover="dragover($event)" >
       <div class="info-box">
         <i class="icon upload"></i>
         <span class="info-text">将文件拖到此处，或点击后选择文件</span>
       </div>
-      <input
-        type="file"
-        accept="image/jpg, image/jpeg, image/png"
-        class="file"
-        multiple="multiple"
-        @change="slecetFile"
-        title=" "
-      >
+      <input  type="file" accept="image/jpg, image/jpeg, image/png"  class="file" multiple="multiple" @change="slecetFile" title=" "  >
     </div>
     <div class="file-box" v-if="fileList.length>0">
       <p class="file-title">文件列表</p>
