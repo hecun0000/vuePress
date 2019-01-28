@@ -1,6 +1,7 @@
 
 # vue
 
+#### [cropperjs图片裁剪](/vue/cropperjs图片裁剪.md) 
 #### [类时间筛选组件](/vue/类时间筛选组件.md) 
 #### [vue多环境打包](/vue/vue多环境打包.md) 
 #### [element多文件上传](/vue/element多文件上传.md) 
