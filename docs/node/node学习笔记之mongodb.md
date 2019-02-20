@@ -173,3 +173,143 @@ upsert有两个值：true代表没有就添加，false代表没有不添加(默�
 ```js
 db.user.update({"name":"王朗"},{$set:{"age": 20}},{upsert:true})
 ```
+
+## 在node中使用Mongoose
+1. 安装   
+```npm install mongoose --save```
+2. 连接数据库   
+在一般项目中，会新建一个init.js来连接数据库   
+init.js:   
+```js
+const mongoose = require('mongoose')
+const db = "mongodb://localhost/hecun"
+mongoose.Promise =  global.Promise
+exports.connect = ()=>{
+     //连接数据库
+    mongoose.connect(db)
+    // 开启失败重连，进行次数统计，当连接次数大于3次的时候，抛出异常
+    let  maxConnectTimes = 0;
+
+    // 在之后的所有数据库相关操作都必须是数据库连接成功之后才可以，这里添加一个promise 操作；
+    return new Promise((resolve,reject)=>{
+
+         //增加数据库监听事件
+        mongoose.connection.on('disconnected',()=>{
+            console.log('***********数据库断开***********')
+            if(maxConnectTimes<=3){
+                maxConnectTimes++
+                mongoose.connect(db)
+            }else{
+                reject()
+                throw new Error('数据库出现问题，程序无法搞定，请人为修理.....')
+            }
+           
+        })
+
+        mongoose.connection.on('error',(err)=>{
+            console.log('***********数据库错误')
+            if(maxConnectTimes<=3){
+                maxConnectTimes++
+                mongoose.connect(db)
+            }else{
+                reject(err)
+                throw new Error('数据库出现问题，程序无法搞定，请人为修理.....')
+            }
+        })
+        //链接打开的时
+        mongoose.connection.once('open',()=>{
+            console.log('MongoDB connected successfully')   
+            
+            resolve()
+        })
+
+    })
+}
+```
+3. 使用Scheme建表  
+Schema是一种以文件形式存储的数据库模型骨架，无法直接通往数据库端，也就是说它不具备对数据库的操作能力。Schema是以key-value形式Json格式的数据。   
+
+**Schema中的数据类型：**   
+
+- String ：字符串类型
+- Number ：数字类型
+- Date ： 日期类型
+- Boolean： 布尔类型
+- Buffer ： NodeJS buffer 类型
+- ObjectID ： 主键,一种特殊而且非常重要的类型
+- Mixed ：混合类型
+- Array ：集合类型
+
+### mongoose中三个概念 
+
+[mongoose相关文档](https://cn.mongoosedoc.top/docs/guide.html)
+
+- schema ：用来定义表的模版，实现和MongoDB数据库的映射。用来实现每个字段的类型，长度，映射的字段，不具备表的操作能力。   
+- model ：具备某张表操作能力的一个集合，是mongoose的核心能力。我们说的模型就是这个Model。    
+- entity ：类似记录，由Model创建的实体，也具有影响数据库的操作能力。   
+
+### 定义一个schema   
+新建一个User.js文件：  
+
+```js  
+//引入Mongoose
+const mongoose = require('mongoose')
+// 声明Schema
+const Schema = mongoose.Schema
+//声明Object类型
+let ObjectId = Schema.ObjectId
+
+// 创建我们的用户Schema
+const userSchema = new Schema({
+    UserId: ObjectId,
+    userName: {
+        unique: true,
+        type: String
+    },
+    password: String,
+    createAt: {
+        type: Date,
+        default: Date.now()
+    },
+    lastLoginAt: {
+        type: Date,
+        default: Date.now()
+    }
+})
+
+// 发布模型
+mongoose.model('user', userSchema)
+console.log('用户表创建成功')
+```
+### 载入数据与查找
+
+init.js:   
+```js
+//...
+const glob = require('glob')
+const {resolve} = require('path')
+
+exports.initSchemas = ()=>{
+    glob.sync(resolve(__dirname,'./schema','**/*.js')).forEach(require)
+}
+//...
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
