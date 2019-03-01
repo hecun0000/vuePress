@@ -39,7 +39,7 @@ export default {
         left: 0;
         right: 0;
         margin: auto;
-        z-index: 10;
+        z-index: 7;
         background: #ffffffcc;
         text-align: center;
         display: flex;
