@@ -124,7 +124,7 @@ export default {
         let that = this;
         reader.onload = function() {
           that.pics.push({
-            base64: this.result.replace(/^(data\:image\/)+(\S)+;base64\,/, ""),
+            base64: this.result.replace(/^(data:image\/)+(\S)+;base64/, ""),
             keyname: keyname
           });
         };
