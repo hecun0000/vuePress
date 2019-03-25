@@ -5,10 +5,16 @@ categories: vue
 copyright: true  
 sidebar: auto
 ---
-> 父组件: 用于数据管理
-> 子组件: 用于数据的展示    
+# vue中常用的组件通信
 
-1. 父组件给子组件传值  
+
+
+::: tip
+父组件: 用于数据管理    
+子组件: 用于数据的展示    
+:::
+
+## 利用props进行父子组件传参  
 
 ```html
 <parent>
@@ -47,7 +53,7 @@ props: {
     }
 }
 ```
-2. 子组件给父组件传值  
+## 使用 $emit 给父组件触发事件  
 在vue不支持子组件修改数据, 可以通过事件的触发告诉父组件去修改数据: 
 子组件:  
 
@@ -75,7 +81,7 @@ methods: {
     }
 }
 ```
-3. 非父子组件之间的通信   
+## 使用Bus对非父子组件进行传参   
 创建一个中转站, 用于事件的接受和事件的传递    
 
 ```js
@@ -101,47 +107,35 @@ created() {
 }
 ```
 
+## 使用$attr(2.4.0新增)   
 
-vue多页面进行跳转： 
 
-```js
-export default class Navigator {
 
-    // 单页间跳转方法
-    static openRouter({ query = {}, name = '', type = '' } = {}) {
-        let params = ''
 
-        let formatQuery = query => {
-        	let params = ''
 
-        	if (query) {
-        	    for (let item in query) {
-        	        let vals = query[item]
 
-        	        if (vals !== undefined) {
-        	            params += item + '=' + vals + '&'
-        	        }
-        	    }
-        	}
 
-        	params = params ? '?' + params : params
 
-        	return params
-        }
 
-        if (query) {
-            params = formatQuery(query)
-        }
 
-        let homepath = `/${location.pathname.split('/')[1]}/` // 获取单页前缀
 
-        let url = `${homepath}${name}${params}` // 拼接url
 
-        if (type === 'replace') {
-            location.replace(url) // replace 跳转
-        } else {
-            location.href = url // href 跳转
-        }
-    }
-}
-```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
