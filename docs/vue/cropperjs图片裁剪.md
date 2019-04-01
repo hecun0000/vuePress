@@ -138,12 +138,65 @@ export default {
 ```
 3. 初始化裁剪框和预览框 
 
-这里使用cropperjs来做，[cropperjs](c)
+这里使用cropperjs来做，[cropperjs](https://github.com/fengyuanchen/cropperjs)
 
-写一个init（）初始化一个裁剪框
+在文档中可以看到，初始化的会用到 ```new Cropper(element[, options])``` ,
+- element 为img元素或者canvas等；
+- options则是相关配置项  
+
+具体配置项可以[查看官方文档](https://github.com/fengyuanchen/cropperjs) 或  [中文版](https://blog.csdn.net/weixin_38023551/article/details/78792400) 大佬翻译的，，还不错。。。
+
+```js
+init(){
+    let image = document.getElementById("image");
+    let ratio = this.ratio.split("/");
+    this.cropper = new Cropper(image, {
+        aspectRatio: ratio[0] / ratio[1], 
+        //裁剪框比例
+        viewMode: 1,
+         //视图模式
+        autoCropArea: 1,   
+         //裁剪框占图片区域的大小
+        background: false, 
+        //容器的网格背景
+        zoomable: true, 
+        //是否允许缩放
+        preview: ".img-preview", 
+        //预览元素
+        // 准备完成执行的函数
+        ready() {},
+    });
+}
+```
+其中，```.img-preview``` 是进行裁剪预览的一个容器元素，如果展示多个尺寸的预览图，只需要设置不同尺寸大小的元素就可以。。
 
 
-new Cropper()
+现在在拿到图片信息的时候，执行以下 ```init``` 函数。我写在了 ```watch``` 中执行。  
+
+```js  
+watch: {
+    fileUrl: {
+        handler(val) {
+            if (this.uploadDialog.visible) {
+                // 弹窗打开
+                this.url = val;
+                setTimeout(() => {
+                    if (this.cropper) {
+                        //  销毁
+                        this.cropper.destroy();
+                    }
+                    this.init();
+                }, 300);
+            }
+        },
+        //立即执行监听事件  
+        immediate: true
+    }
+}
+```
+
+这样的话，布局和初始化算是完成了。 
+
 
 
 
