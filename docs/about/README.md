@@ -21,32 +21,36 @@
 
 # 工作经历
 
-## 西安绿豆芽信息科技有限公司 （ 2018年3月 ~ 2019年2月 ）
+## 西安绿豆芽信息科技有限公司 （ 2018年3月 ~ 2019年4月 ）
 
 ### 乐店云通用版后台管理项目   
- - 使用技术： vue + axios + vuex +  element-ui + echarts 
-- 负责部分：商品管理 + 客户管理 + 订单管理 等其他模块  
+- 使用技术： vue + axios + vuex + vue-router + element-ui + echarts 
+- 负责部分：商品管理 + 客户管理 + 订单管理 + 设置 等其他模块  
 - 项目收获：
-    1.  利用vue-router实现vue项目的权限管理和角色区分    
+    1.  利用 ```vue-router``` 实现vue项目的权限管理和角色区分    
     2.  利用笛卡尔算法实现商品创建中的sku数据的生成
-    3.  基于html2canvas实现前端图片下载功能  
-    4.  基于cropperjs实现对图片裁剪功能的封装以及组件化，并搭配七牛云实现裁剪后的图片上传  
+    3.  基于 ```html2canvas``` 实现前端图片下载功能  
+    4.  基于 ```cropperjs``` 实现对图片裁剪功能的封装以及组件化，并搭配七牛云实现裁剪后的图片上传  
     5.  使用高德地图的API实现地图中选点并获取相应的地区数据
     6.  封装区域地区选择器，用于运费地区选择
  - 过程体会：在开发的过程中，由于时间不允许的情况下，对于权限区分，项目组打算使用多个项目进行管理的时候。后来觉得太繁琐，在空闲时间了解权限控制的实现，应用于项目中，极大减小了维护成本。并且该方案已在后续项目中得以沿用。
 
 ###  乐店云官方网站项目
 - 使用技术： vue + axios + Echarts + thress.js  
-- 负责部分：整个官网的前端部分
-- 在线地址： [乐店云官网](https://www.ledianyun.com/)  
+- 负责部分： 整个官网的前端部分（包括登录注册模块）
+- 项目收获：
+    1. 熟练使用 vue-router 进行路由管理
+    2. 熟练使用 vue 中组件传值
+    3. 对vue组件化有着深入了解
+- 在线地址： [https://www.ledianyun.com/](https://www.ledianyun.com/)
 - 过程体会： 基本熟悉vue相关项目的开发，感受到组件化的开发的便利。整个项目中比较自豪的就是利用three.js实现类似波浪的效果、使用Echarts完成一个可视化的地图组件。 在开发过程中，遇到比较难的部分，就是利用three.js实现类似波浪的效果动画，在经过网上大量查找相关资料（github），最终实现了波浪效果。
 
 ### 乐现场项目中红包雨相关模块
  - 使用技术： jq + ajax + thress.js 
 - 负责部分：红包雨活动中的pc段活动管理部分  
 - 项目收获：
-    1.  使用  websocket 实现活动与手机段效果的同步
-    2.  利用three.js 实现红包雨的动画
+    1.  使用 ```websocket``` 实现活动与手机段效果的同步
+    2.  利用 ```three.js``` 实现红包雨的动画
  - 过程体会：在开发的过程中，利用jquey进行开发，并接触部分的php模板渲染开发。熟悉websocket相关的开发流程和基本用法。
 
   
@@ -54,25 +58,33 @@
 
 所学到的知识：
 - 根据UI设计师提供的设计图纸,完成静态页面的编写
--  利用HTML、JS、CSS3书写前端功能
+- 利用HTML、JS、CSS3书写前端功能
 - 利用后端提供的的数据接口, 完成前端页面的数据加载与显示
 - 在此次工作中深入了解前端行业 , 并产生对web行业产生浓厚的兴趣
 
   
 # 学习作品
-## h-running 
-  - 介绍：一个简单的vue代码在线编辑 并 引入elementUI库。
-  -  项目链接： [https://github.com/hecun0000/h-running](https://github.com/hecun0000/h-running)
-  
- ## 个人博客项目
+ ## vue-cropperjs
+  - 使用技术： vue + cropper + element-ui + qiniu + express + nginx
+  - 介绍：主要方便自己将图片上传至七牛云
+  - 功能：
+    1. 支持图片的单个上传以及批量上传
+    2. 可对图片进行裁剪，压缩（支持圆形裁剪）
+  - 个人收获： 
+    1. 在服务器上部署 node 和 vue 相关代码，并配置域名，可进行访问
+    2. 将复用部分进行组件化封装
+  - 在线地址： [http://p.hecun.site/cropper](http://p.hecun.site/cropper)
+
+
+ ## hecun's blog
   - 使用技术： vue + vuepress + nginx 
   - 功能： 主要记录工作中常用的代码块以及学习笔记的记录
   - 在线地址： [http://blog.hecun.site/](http://blog.hecun.site/)
  
 ## 技术文章
 
-- csv和excel读取和下载  点赞数：338     [https://juejin.im/post/5b1fdbcc5188257d571f2c62](https://juejin.im/post/5b1fdbcc5188257d571f2c62) 
-- vue项目中使用token的身份验证的简单实践 点赞数 170 [https://juejin.im/post/5c788f8a6fb9a04a0379e9ae](https://juejin.im/post/5c788f8a6fb9a04a0379e9ae)
+- csv和excel读取和下载  点赞数：341     [https://juejin.im/post/5b1fdbcc5188257d571f2c62](https://juejin.im/post/5b1fdbcc5188257d571f2c62) 
+- vue项目中使用token的身份验证的简单实践 点赞数 181 [https://juejin.im/post/5c788f8a6fb9a04a0379e9ae](https://juejin.im/post/5c788f8a6fb9a04a0379e9ae)
 
     
 # 技能清单
@@ -82,8 +94,8 @@
  - 熟练运用vue框架以及vue全家桶并进行型项目的开发与维护
  - 熟练使用 Vue, react等前端主流框架, 对框架的组件化有着深入的理解
  - 熟悉微信小程序开发以及各种常用插件
- - 熟练运用git进行项目管理
- - 熟悉 Node.js 开发，能够熟练使用request, express等一些常见模块,
+ - 熟练运用 git 进行项目管理
+ - 熟悉 Node.js 开发，能够熟练使用 request, express 等一些常见模块,
  - 了解nginx相关操作
 
       
