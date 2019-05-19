@@ -148,12 +148,13 @@ class downloadImage {
      * @param fileName 文件名
      * @param scale 清晰度参数
      */
-    constructor(query, fileName,scale=5) {
+    constructor(query, fileName, scale = 5) {
         this.$el = document.querySelector(query);
         this.fileName = fileName || "下载图片";
         this.scale = scale; //定义任意放大倍数 支持小数
     }
-    save() {
+
+    async init() {
         let shareContent = this.$el; //需要截图的包裹的（原生的）DOM 对象
         let width = shareContent.offsetWidth; //获取dom 宽度
         let height = shareContent.offsetHeight; //获取dom 高度
@@ -171,20 +172,25 @@ class downloadImage {
             useCORS: true // 【重要】开启跨域配置
         };
 
-        html2canvas(shareContent, opts).then((canvas) => {
-
-            let context = canvas.getContext('2d');
+        const canvasData = await html2canvas(shareContent, opts);
+        let context = canvasData.getContext('2d');
             // 【重要】关闭抗锯齿
-            context.mozImageSmoothingEnabled = false;
-            context.webkitImageSmoothingEnabled = false;
-            context.msImageSmoothingEnabled = false;
-            context.imageSmoothingEnabled = false;
-            this.saveAs(canvas.toDataURL());
-        });
+        context.mozImageSmoothingEnabled = false;
+        context.webkitImageSmoothingEnabled = false;
+        context.msImageSmoothingEnabled = false;
+        context.imageSmoothingEnabled = false;
+
+       return canvasData;
+    }
+    // 获取base64格式的图片
+     async getBase64Data() {
+        const res = await this.init();
+       return res.toDataURL("image/png")
     }
 
     //利用a标签实现下载
-    saveAs(obj) {
+    async saveAs() {
+        const obj = await this.init().toDataURL("image/png")
         let tmpa = document.createElement("a");
         tmpa.download = this.fileName;
         tmpa.href = obj; //绑定a标签
