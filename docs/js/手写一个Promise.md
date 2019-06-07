@@ -2,7 +2,52 @@
 sidebar: auto
 ---
 
-# 手写Promise  
+# promise 异步任务处理
+
+
+## 简要了解
+promise对象是对我们现在尚未得到但将来会得到值得占位符；是能够得知异步计算结果的一种保证。     
+
+使用新的内置函数promise来创建一个promise需要传入一个函数，这个函数被称为执行函数，它包含两个参数 `resolve` 和 `reject` 。 当把两个内置函数： `resolve` 和 `reject` 作为函数传入 `Promise` 构造函数后， 执行函数会立即调用。我们可以手动调用 `resolve` 和 `reject` 让承诺兑现。   
+
+代码调用 `Promise` 对象内置的 then 方法, 我们向这个方法传入了两个回调函数。一个成功回调函数和一个失败函数。当承诺实现则一个回调会被调用，当承诺失败第二个回调会被调用。   
+
+## 理解简单回调所带来的问题  
+
+1. 错误处理困难  
+    
+    当长时间任务开始运行，调用回调函数的代码一般不会和开始任务的这段代码位于时间循环的统一步骤。导致错误经常会丢失。   
+
+2. 持续连续步骤非常棘手     
+    
+    在如下代码中，会增加代码的复杂度，代码会越来越难来管理。（回调地狱）
+
+    ```js
+    getJSON("data/nanjas.json", function(err, nanjsa){
+        getJSON(nanjsa[0].location, function(err, locationInfo){
+            sendOrder(locationInfo, function(err, status){
+                // ...
+            })
+        }}
+    }}
+    ```
+3. 执行多任务并行任务  
+
+    会增加一些很多样板代码，且仅仅用于并行任务执行多个行动。   
+
+## 深入研究 promise  
+
+    
+
+
+
+
+## 手写Promise  
+
+
+
+
+
 
 ```js
 function Promise(executor) {

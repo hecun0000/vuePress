@@ -1,6 +1,7 @@
 
 # vue
 
+#### [基于vue做一个禅道主页拖拽效果](/vue/基于vue仿一个禅道拖拽效果.md) 
 #### [cropperjs图片裁剪](/vue/cropperjs图片裁剪.md) 
 #### [类时间筛选组件](/vue/类时间筛选组件.md) 
 #### [vue多环境打包](/vue/vue多环境打包.md) 
