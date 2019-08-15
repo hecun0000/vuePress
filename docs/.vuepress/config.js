@@ -17,7 +17,7 @@ module.exports = {
             { text: 'VUE', link: '/vue/' },
             { text: 'CSS', link: '/css/' },
             { text: 'node', link: '/node/' },
-            { text: '关于', link: '/about/' },
+            { text: '随想', link: '/think/' },
             { text: 'Github', link: 'https://github.com/hecun0000' },
         ],
         sidebarDepth: 2,

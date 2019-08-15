@@ -3,7 +3,7 @@ sidebar: auto
 sidebarDepth: 2
 ---
 
-# JavaScript忍者秘籍 - 理解函数   
+# JavaScript忍者秘籍 - 读书笔记   
 
 ## 函数：定义与参数   
 
@@ -78,4 +78,94 @@ function forEach(list, callback) {
 
 ### 在异步代码中。为什么使用 promise 比使用简单的回调更好？  
 
-### 使用 promise.race 来执行很多长期执行的任务时， promise 最终会在什么时候变成 resolved 状态？它什么时候会无法变成 resolved 状态？ 
+### 使用 promise.race 来执行很多长期执行的任务时， promise 最终会在什么时候变成 resolved 状态？它什么时候会无法变成 resolved 状态？   
+
+## 处理集合  
+
+### 模拟实现Set   
+
+```js
+class MySet {
+    constructor () {
+        this.data = {};
+        this.length = 0;
+    }
+    has(item) {
+        return typeof this.data[item] !== "undefined";
+    }
+
+    add(item) {
+        if(!this.has(item)){
+            this.data[item] = true;
+            this.length++;
+
+            return this.data;
+        }
+    }
+    remove(item) {
+        if(this.has(item)){
+            delete this.data[item];
+            this.length--;
+        }
+    }
+}
+
+const text = new MySet();
+
+text.add('hecun');
+text.add('hecun');
+text.add('禾寸');
+
+console.log(text);
+
+text.remove('hecun');
+
+console.log(text, text.data);
+```
+
+## 历史弥新的事件  
+
+### 深入事件循环   
+
+在事件的循环中不仅仅包含事件队列， 而是具有至少两个队列， 除了事件，还要保持浏览器执行的其他操作。这些操作被称为任务， 并且分为两类， 宏任务和微任务。  
+
+宏任务， 包括创建主文档对象，解析HTML, 执行主线（或全局）JavaScript代码，更改当前的URL以及各种事件， 如页面加载， 输入， 网络事件和定时器事件。从浏览器的角度来看，宏任务代表一个个离散的，独立的工作单元。运行完任务后，浏览器可以继续其他调度，如重新渲染页面的UI或执行垃圾回收。
+
+微任务是更小的任务。微任务更新应用程序的状态，但必须在浏览器任务继续执行其他任务之前执行，浏览器任务包括重新渲染页面UI。微任务的案例包括Promise回调函数，DOM发生变化等。微任务需要我们能尽快的，通过异步的方式执行，同时不能产生新的微任务。微任务是的我们能够在重新渲染UI之前指定的行为，避免不必要的UI重绘，UI重绘会应用程序状态不连续。   
+
+**事件循环基于两个基本原则**：  
+
+- 一次处理一个任务
+- 一个任务开始后知道运行完成，不会被其他任务中断  
+
+### 玩转定时器  
+
+JavaScript定时器处理方式  
+
+| method| format | 描述 | 
+| --| -- | --- | 
+| setTimeOut| id = setTimeOut(fn, delay) | 启动一个计时器，在指定的延迟事件结束执行一次回调函数，返回标识计时器的唯一值 | 
+| clearTimeOut| clearTimeOut(id) | 当指定定时器， 尚未触发时，取消定时器 |
+| setInterval| id = setInterval(fn, delay) | 启动一个计时器，按照指定的延迟间隔不断执行回调函数| 
+| clearInterval| clearInterval(id) | 取消指定的定时器 |  
+
+**延迟执行和间隔执行的区别**：  
+
+```js
+setTimeOut( function repeatName(){
+    // some long block of code ....
+    setTimeOut(repeatName, 10);
+}, 10);
+
+setInterval(()=>{
+    // some long block of code ....
+}, 10);
+```
+
+setTimeOut 内的代码在前一个回调执行完成后，至少延迟10ms执行回调函数（取决于事件队列的状态，等待事件只会大于10ms）,而setInterval会尝试每10ms执行回调函数，不关心前一个回调函数是否执行。间隔执行函数可以一个接一个依次执行。 
+
+当我们知道超过结束时间时，无法保证超时回调精准执行。不像间隔执行函数那样每10ms触发一次，它是重新安排每10ms后执行。
+
+### 处理计算复杂度极高的任务   
+
+
