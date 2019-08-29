@@ -1,6 +1,7 @@
 # JavaScript
 
 #### [单页面导航](/js/单页面导航.md)
+#### [readmes](/js/readmes.md)
 #### [学习JavaScript数据结构与算法之读书笔记](/js/学习JavaScript数据结构与算法.md)
 #### [js忍者秘籍读书笔记](/js/js忍者秘籍读书笔记.md)
 #### [2019年4月份面试总结](/js/2019年4月份面试总结.md)
