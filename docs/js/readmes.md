@@ -127,10 +127,7 @@ import Request from '@/utils/request'
 
 export const getRoleList = data => Request.get('/system/role/list', data)
 
-export const getRoleListById = data => {
-  const { id, ...params } = data
-  return Request.get(`/system/${id}/list`, params)
-}
+export const getRoleListById = ({ id, ...params }) => Request.get(`/system/${id}/list`, params)
 ```
 Request 中已封装 get,post,put,delete 等相关方法，根据要求自行引用
 
@@ -172,7 +169,7 @@ methods: {
 
 
 
-## 页面相关方法封装  
+## 页面分页相关方法封装  
 
 封装组件可查看 /src/mixins/pagination.js   
 
@@ -248,7 +245,9 @@ export default {
 ```
 修改完成后，重启项目生效     
 
+## 权限管理   
 
+后续补充...
 
 ## 代码规范  
 
@@ -264,31 +263,37 @@ export default {
 在报错后，工具修改不了的不规范代码请自行修改
 
 
+## 注意事项
+
+- 上传代码时，请删除 `debugger`  
+- 切勿在 `console.log` 中调用函数 （项目打包会统一删除console.log）
+
+
 ## 更多自定义配置
 
-路由模式配置：    
+1. 路由模式配置：    
 - hash     hash模式
 - history  需要后台进行重定向配置   
 
-是否开启gzip：  
+2. 是否开启gzip：  
 
 目前在打包时，已经配置gzip压缩，需后台修改 nginx相关配置
 
-环境配置：   
+3. 环境配置：   
 配置文件 /src/utils/env.js 中修改   
 
 其中：  
 - development 为开发环境 
 - production 为生产环境   
 
-## 其他配置   
 
-- 字体与图标：  
+
+4. 字体与图标：  
 
 支持 iconfont 
 支持 svg   
 
-- filter：显示文字的转化 
+5. filter：显示文字的转化 
 
 使用方式： 
 
@@ -300,7 +305,7 @@ export default {
 </template>
 ```
 
-- 全局过滤器：  
+6. 全局过滤器：  
 在 /src/filters/index.js 进行导出，会自动配置为全局过滤器  
 组件内过滤器：  
 比如： 
@@ -316,7 +321,7 @@ export default {
 }
 ```
 
-- 全局组件： 
+7. 全局组件： 
 
 定义在src/components/global 文件中  
 
@@ -329,11 +334,25 @@ export default {
 
 
 
+## 安装插件库介绍   
 
-
-
-
-
-
-
-
+- axios 请求封装库
+- dayjs 时间格式化处理
+- echarts 可视化图表
+- element-ui UI库
+- html2canvas 将html转化为图片
+- js-cookie 操作cookie
+- jsencrypt 加解密
+- nprogress 加载滚动条
+- number-precision 数字运算
+- path-to-regexp 处理文件路径
+- screenfull 全屏
+- v-charts element 封装的eChart
+- v-viewer 图片放大查看工具
+- vue vue
+- vue-awesome-swiper 轮播图
+- vue-count-to 数字滚动下过
+- vue-friendly-iframe iframe封装
+- vue-router 路由库
+- vuedraggable 拖拽库
+- vuex 状态管理
