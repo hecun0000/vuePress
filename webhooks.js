@@ -22,7 +22,6 @@ app.get('/', function (req, res) {
 
 
 app.post('/webhooks', function (req, res) {
-  console.log(req.body)
   const SECRET_TOKEN = 'jy211985';
   const signature = `sha1=${crypto
     .createHmac('sha1', SECRET_TOKEN)
