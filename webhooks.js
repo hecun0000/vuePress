@@ -43,7 +43,7 @@ app.post('/webhooks', function (req, res) {
     if(req.body.ref === 'refs/heads/master') {
       console.log('push master')
       let msg = req.body.head_commit.message
-      let author = req.body.head_commit.author
+      let author = req.body.head_commit.author.name
       console.log(msg, author)
       if(msg.indexOf('@deploy')>-1) {
         console.log('deploy master')
