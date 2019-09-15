@@ -41,6 +41,9 @@ app.post('/webhooks', function (req, res) {
           console.log(222222)
           console.log(text)
         })
+        Worker.send({
+          msg, author
+        })
       }
     }
   } else {

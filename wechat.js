@@ -1,5 +1,6 @@
   
 const qrTerm = require('qrcode-terminal')
+const chinaTime = require('china-time');
 const { 
   Contact,
   log,
@@ -16,13 +17,19 @@ bot.on('error',   onError)
 bot.start()
 .catch(console.error)
 
+process.on('message', (obj)=> {
+  console.log('使用微信发送消息给禾苗')
+  main(obj)
+})
+
+
 function onScan (qrcode, status) {
   qrTerm.generate(qrcode, { small: true })  // show qrcode on console
 }
 
 function onLogin (user) {
   console.log(`${user} login`)
-  main()
+  // main({author: '禾苗', msg: '测试哦'})
 }
 
 function onLogout (user) {
@@ -36,57 +43,23 @@ function onError (e) {
 /**
  * Main Contact Bot
  */
-async function main() {
-  const contactList = await bot.Contact.findAll()
-
-  log.info('Bot', '#######################')
-  log.info('Bot', 'Contact number: %d\n', contactList.length)
-
-  /**
-   * official contacts list
-   */
-  for (let i = 0; i < contactList.length; i++) {
-    const contact = contactList[i]
-    if (contact.type() === Contact.Type.Official) {
-      log.info('Bot', `official ${i}: ${contact}`)
-    }
+async function main({author, msg}) {
+  let logMsg;
+  console.log('发送消息')
+  let contact = await bot.Contact.find({name:'禾苗'})
+  console.log(contact)
+  let str = `${chinaTime('YYYY-MM-DD HH:mm:ss')}
+部署人：${author} 
+部署信息：${msg}`
+  console.log(str)
+  try {
+    logMsg = str
+    await contact.say(str)
+  } catch (e) {
+    logMsg = e.message
   }
 
-  /**
-   *  personal contact list
-   */
-
-  for (let i = 0; i < contactList.length; i++) {
-    const contact = contactList[i]
-    if (contact.type() === Contact.Type.Personal) {
-      log.info('Bot', `personal ${i}: ${contact.name()} : ${contact.id}`)
-    }
-  }
-
-  const MAX = 17
-  for (let i = 0; i < contactList.length; i++ ) {
-    const contact = contactList[i]
-
-    /**
-     * Save avatar to file like: "1-name.jpg"
-     */
-    const file = await contact.avatar()
-    const name = file.name
-    await file.toFile(name, true)
-
-    log.info('Bot', 'Contact: "%s" with avatar file: "%s"',
-                    contact.name(),
-                    name,
-            )
-
-    if (i > MAX) {
-      log.info('Bot', 'Contacts too many, I only show you the first %d ... ', MAX)
-      break
-    }
-  }
-
-  const SLEEP = 7
-  log.info('Bot', 'I will re-dump contact weixin id & names after %d second... ', SLEEP)
-  setTimeout(main, SLEEP * 1000)
-
+  console.log(logMsg)
+  
 }
+
