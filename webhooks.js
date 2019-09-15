@@ -3,6 +3,16 @@ const crypto = require('crypto');
 const bodyParser = require('body-parser')
 const app = express()
 
+const childProcess = require('child_process');
+const worker = childProcess.fork('./wechat.js')
+
+// setInterval(_=>{
+//   worker.send({
+//     author: 'ddd',
+//     msg: 'hhhhhh'
+//   })
+// }, 3000)
+
 app.use(bodyParser.json())
 
 function run_cmd(cmd, args, cb) {
@@ -20,7 +30,7 @@ app.get('/', function (req, res) {
   res.send('Hello World');
 });
 
-
+console.log(worker)
 app.post('/webhooks', function (req, res) {
   const SECRET_TOKEN = 'jy211985';
   const signature = `sha1=${crypto
@@ -41,7 +51,7 @@ app.post('/webhooks', function (req, res) {
           console.log(222222)
           console.log(text)
         })
-        Worker.send({
+        worker.send({
           msg, author
         })
       }
