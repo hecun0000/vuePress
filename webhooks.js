@@ -33,7 +33,6 @@ app.post('/webhooks', function (req, res) {
     res.status(200).end('Authorized');
     if(req.body.ref === 'refs/heads/master') {
       console.log('push master')
-        debugger;
       let msg = req.body.head_commit.message
       let author = req.body.head_commit.author
       console.log(msg, author)
