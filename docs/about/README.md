@@ -9,71 +9,49 @@
 
  - 姜源/男/1995 
  - 本科/重庆科技大学 
- - 工作年限：2年
+ - 工作年限：2.5年
  - 技术博客：[http://blog.hecun.site](http://blog.hecun.site)
  - Github：[https://github.com/hecun0000](https://github.com/hecun0000)                          
   
 *** 
  - 期望职位：WEB前端工程师
- - 期望城市：西安
 
 # 技能清单
 
- - 精通 DIV+CSS 布局的 HTML 代码编写，熟练写出符合 W3C 标准的代码
- - 熟练运用vue框架以及vue全家桶并进行型项目的开发与维护
- - 熟练使用 Vue, react等前端主流框架, 对框架的组件化有着深入的理解
- - 熟悉微信小程序开发以及各种常用插件
- - 熟练运用 git 进行项目管理
- - 熟悉 Node.js 开发，能够熟练使用 request, express 等一些常见模块,
- - 了解nginx相关操作
+- 熟练掌握 HTML5 标签和 CSS 运⽤用以及新增的属性进⾏页面重构;  
+- 熟练掌握并会运用前端的基本框架和类库：jQuery、ECharts、Axios 等;  
+- 熟练运⽤响应式布局和弹性盒布局，利⽤ rem、px 和百分比进行移动端的布局;  
+- 熟练运⽤ Vue 框架，擅⻓ Vue 全家桶 + ElementUI 进⾏项⽬的开发;  
+- 懂得使用 docker + jenkins 配置前端自动化部署;  
+- 熟练使⽤ Sass 预编译，实现 CSS 的管理和维护;  
+- 了解 Webpack 前端自动化构建工具以及 Git 代码托管工具;  
+- 了解云服务器的基本搭建部署和运作流程;  
 
 
 # 工作经历
 
+## 陕西德容信息技术有限公司 （ 2019年9月 ~ 至今 ）
+
+### 军事代表移动监督平台   
+
+- 项目描述： vue + axios + vuex + vue-router + element-ui + echarts 
+- 职责： 
+- 难点： 
+
+
 ## 西安绿豆芽信息科技有限公司 （ 2018年3月 ~ 2019年4月 ）
 
 ### 乐店云通用版后台管理项目   
-- 使用技术： vue + axios + vuex + vue-router + element-ui + echarts 
-- 负责部分：商品管理 + 客户管理 + 订单管理 + 设置 等其他模块  
-- 项目收获：
-    1.  使用路由拦截和 `addRoutes` 实现vue项目的权限管理和角色区分    
-    2.  利用笛卡尔算法实现商品创建中的sku数据的生成
-    3.  基于 `html2canvas` 实现前端图片下载功能  
-    4.  基于 `cropperjs` 实现对图片裁剪功能的封装以及组件化，并搭配七牛云实现裁剪后的图片上传  
-    5.  使用高德地图的API实现地图中选点并获取相应的地区数据
-    6.  封装区域地区选择器，用于运费地区选择
- - 遇到的问题：在开发的过程中，由于时间不允许的情况下，对于权限区分，项目组打算使用多个项目进行管理的时候。后来觉得太繁琐，在空闲时间了解权限控制的实现，应用于项目中，极大减小了维护成本。并且该方案已在后续项目中得以沿用。
 
-###  乐店云官方网站项目
-- 使用技术： vue + axios + Echarts + thress.js  
-- 负责部分： 整个官网的前端部分（包括登录注册模块）
-- 项目收获：
-    1. 熟练使用 vue-router 进行路由管理
-    2. 熟练使用 vue 中组件传值
-    3. 对vue组件化有着深入了解
-- 在线地址： [https://www.ledianyun.com/](https://www.ledianyun.com/)
-- 过程体会： 基本熟悉vue相关项目的开发，感受到组件化的开发的便利。整个项目中比较自豪的就是利用three.js实现类似波浪的效果、使用Echarts完成一个可视化的地图组件。 在开发过程中，遇到比较难的部分，就是利用three.js实现类似波浪的效果动画，在经过网上大量查找相关资料（github），最终实现了波浪效果。
+- 项目描述： vue + axios + vuex + vue-router + element-ui + echarts 
+- 职责： 
+- 难点： 
 
-### 乐现场项目中红包雨相关模块
- - 使用技术： jq + ajax + thress.js 
-- 负责部分：红包雨活动中的pc段活动管理部分  
-- 项目收获：
-    1.  使用 `websocket` 实现活动与手机段效果的同步
-    2.  利用 `three.js` 实现红包雨的动画(主要使用景深效果)
- - 过程体会：在开发的过程中，利用jquey进行开发，并接触部分的php模板渲染开发。熟悉websocket相关的开发流程和基本用法。
 
-  
-## 重庆诺凯威动漫设计有限公司 （ 2017年6月 ~ 2018年2月 ）
 
-所学到的知识：
-- 根据UI设计师提供的设计图纸,完成静态页面的编写
-- 利用HTML、JS、CSS3书写前端功能
-- 利用后端提供的的数据接口, 完成前端页面的数据加载与显示
-- 在此次工作中深入了解前端行业 , 并产生对web行业产生浓厚的兴趣
-
-  
 # 学习作品
- ## vue-cropperjs
+
+## vue-cropperjs
   - 使用技术： vue + cropper + element-ui + qiniu + express + nginx
   - 介绍：主要方便自己将图片上传至七牛云
   - 功能：
@@ -85,13 +63,13 @@
   - 在线地址： [http://p.hecun.site/cropper](http://p.hecun.site/cropper)
 
 
- ## hecun's blog
-  - 使用技术： vue + vuepress + nginx 
+## 个人博客
+  - 使用技术： vue + vuepress + nginx + docker
   - 功能： 主要记录工作中常用的代码块以及学习笔记的记录
   - 在线地址： [http://blog.hecun.site/](http://blog.hecun.site/)
  
 ## 技术文章
 
-- csv和excel读取和下载  点赞数：341     [https://juejin.im/post/5b1fdbcc5188257d571f2c62](https://juejin.im/post/5b1fdbcc5188257d571f2c62) 
-- vue项目中使用token的身份验证的简单实践 点赞数 181 [https://juejin.im/post/5c788f8a6fb9a04a0379e9ae](https://juejin.im/post/5c788f8a6fb9a04a0379e9ae)
+- csv和excel读取和下载  点赞数：352     [https://juejin.im/post/5b1fdbcc5188257d571f2c62](https://juejin.im/post/5b1fdbcc5188257d571f2c62) 
+- vue项目中使用token的身份验证的简单实践 点赞数 201 [https://juejin.im/post/5c788f8a6fb9a04a0379e9ae](https://juejin.im/post/5c788f8a6fb9a04a0379e9ae)
       

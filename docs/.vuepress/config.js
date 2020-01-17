@@ -8,7 +8,7 @@ module.exports = {
         ['link', { rel: 'icon', type: "image/x-icon", href: '/img/logo.ico' }],
         ['link', { rel: 'manifest', href: '/manifest.json' }],
         ['link', { rel: 'apple-touch-icon', href: '/img/logo.ico' }],
-        ['mate', { name: 'keywords', content: '进击的程序源,hecun,禾寸' }],
+        ['mate', { name: 'keywords', content: '进击的程序源,hecun,禾寸' }]
     ],
     themeConfig: {
         nav: [
@@ -19,6 +19,7 @@ module.exports = {
             { text: 'node', link: '/node/' },
             { text: '随想', link: '/think/' },
             { text: 'Github', link: 'https://github.com/hecun0000' },
+            { text: '关于', link: '/about/' }
         ],
         sidebarDepth: 2,
         lastUpdated: 'Last Updated',
