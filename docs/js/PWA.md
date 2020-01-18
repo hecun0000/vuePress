@@ -2,13 +2,11 @@
 sidebar: auto
 ---
 
-
 # PWA   
 
 ## 前言  
 
-`PWA` 是 `Progressive Web Apps` 的缩写，即为渐进式网络应用。突破了以往 `web` 应用只能依赖于互联网分发与依赖浏览器的两种方式。瞬间打开了 `web` 应用从性能、架构到用户体验的一系列可能性。同时，`PWA` 技术属于 `web` 标准。因此也具备了一套代码发布可以同时跨桌面端设备、跨操作系统、跨浏览器的超级应用。同时，在国内也有微博，饿了么使用 `PWA` 技术发布专门的 `PWA` 产品。也可以说从生态、工具链都已经成熟。
-
+`PWA` （ `Progressive Web Apps` ），即为渐进式网络应用。突破了以往 `web` 应用只能依赖于互联网分发与依赖浏览器的两种方式。瞬间打开了 `web` 应用从性能、架构到用户体验的一系列可能性。同时，`PWA` 技术属于 `web` 标准。因此也具备了一套代码发布可以同时跨桌面端设备、跨操作系统、跨浏览器的超级应用。同时，在国内也有微博，饿了么使用 `PWA` 技术发布专门的 `PWA` 产品。也可以说从生态、工具链都已经成熟。
 
 ## 什么是PWA   
 
@@ -55,13 +53,11 @@ sidebar: auto
 |Native App|可安装|不可链接访问|体验好|黏性强|
 |PWA|可安装|可链接访问|体验好|黏性强|
 
-### 行业中优秀案例  
-
-- 微博移动版 [https://m.weibo.cn/](https://m.weibo.cn/)   
-
-- 饿了么web移动版 [https://h5.ele.me/](https://h5.ele.me/)
-
 ## PWA的核心技术   
+
+`PWA` 的核心是用户体验。能让 PWA 达到原生应用的体验并不仅仅依赖于某一项技术，而是多管齐下，进行改进，从而在安全、性能和体验上都获得很大的提升。下面介绍下其中最为核心的相关技术，分别是 `Web App Manifest` 、`Service Worker` 、离线通知、`App Shell` 和骨架屏。
+
+![pwa实现](http://static.hecun.site/hecun15792334717400.png)
 
 ### Web App Manifest   
 
@@ -69,9 +65,31 @@ sidebar: auto
 
 ![微信截图_20200116165028.png](http://static.hecun.site/hecun157916464145796.png)
 
-添加主屏的好处是显而易见的，首先它缩短了用户和站点的距离，用户可以在主屏直达站点；其次是能够让网站具有更加接近 `Native App` 的体验，具有启动画面、沉浸式浏览体验。
+添加主屏的好处是显而易见的，主要有以下两方面的优点：  
+
+- 缩短了用户和站点的距离，用户可以在主屏直达站点
+- 是能够让网站具有更加接近 `Native App` 的体验，具有启动画面、沉浸式浏览体验
 
 
+下图就是 `pwa` 应用添加到桌面的步骤以及启动的效果：
+
+<div class="display-imgs">
+  <img src="http://static.hecun.site/hecun157933309742762.jpg"/>
+  <img src="http://static.hecun.site/hecun15793331211827.jpg"/>
+  <img src="http://static.hecun.site/hecun157933348313625.gif"/>
+</div>
+
+<style>
+.display-imgs img{
+  display: inline-block;
+  width: 30%;
+}
+</style>
+
+<!-- ![微信图片_20200118153748.jpg](http://static.hecun.site/hecun157933309742762.jpg) -->
+<!-- ![微信图片_20200118153756.jpg](http://static.hecun.site/hecun15793331211827.jpg) -->
+
+<!-- ![Gif_20200118_152705.gif](http://static.hecun.site/hecun157933348313625.gif) -->
 ### Service Worker   
 
 `Service Worker` 在 `PWA` 中最重要的功能就是**离线与缓存**。  
@@ -107,9 +125,22 @@ sidebar: auto
 
 ![微信截图_20200117123013.png](http://static.hecun.site/hecun157924163333442.png)
 
-在浏览器兼容方面，已经在绝大部分浏览器上所支持。但在 chorme49 上面部分支持（不支持PushEvent.data 和 PushMessageData）。
+在浏览器兼容方面，已经在绝大部分浏览器上所支持。但在 `chorme49` 上面部分支持（不支持 `PushEvent.data` 和 `PushMessageData` ）。  
 
-### App Shell 和骨架屏    
+标准Web Push的流程：
+
+- 页面向 `Web` 引擎注册 `SW` 。   
+- 页面向 `Web` 引擎订阅消息， `Web` 引擎向 `Push` 服务器（GCM/FCM）订阅消息， `Push` 服务器返回订阅结果（`Push Subscription`，服务器地址）。页面将订阅结果（`Push Subscription`）发送给页面服务器。  
+- 页面服务器向Push服务器推送消息，Push服务器向Web引擎推送消息，`Web` 引擎唤醒 `SW`，触发 `SW` 的 `onpush`，页面处理 `onpush` 消息。  
+
+![v2-3ca04e53ba386ab84074cc0291f0680f.jpg](http://static.hecun.site/hecun157925070740611.jpg)
+
+`Web Push `应用起来并不容易，主要是 `push service` 需要浏览器自身去实现。而在谷歌的 `Push Service（GCM/FCM）`在国内是不可用的。
+
+同时，在开始发送用户通知前，需要通过提示的方式获取他们的授权。如果用户拒绝，则无法发生任何消息，并且不会再给他们提示。
+
+
+### App Shell 和骨架屏     
 
 `App Shell` 和骨架屏在提升首屏体验上发挥了重要作用。  
 
@@ -128,19 +159,59 @@ sidebar: auto
 ![骨架屏.gif](http://static.hecun.site/hecun157924326488460.gif)
 
 
-## PWA有什么优势   
+## PWA在行业中的优秀实践   
 
 
+### PWA 在爱奇艺登录的应用
+
+在爱奇艺主站的登录页面，是使用 `Service Worker` 技术来进行网络处理的优化，对常用的 `CSS`、`JS` 以及图片资源进行缓存，令登录窗口的展现速度明显提升，详见下图：
+
+![518e96220c7e8d40b11c7554b0679d04.png](http://static.hecun.site/hecun157924638456971.png)
+
+从图中我们可以看出：从 `response start` 开始的网络响应时间明显降低。更为重要的是，从右侧的“页面加载时间分布”图可以看出，使用 `Service Worker` 后页面加载时间非常稳定，网络波动对于页面加载造成的影响很小，这对于用户的实际体验会有明显的加分。
 
 
+### 饿了么多页应用在PWA上面的实践
+
+
+饿了么在首屏加载上使用 App Shell， 配合骨架屏 以及 服务端渲染 （Server Side Rendering）在首屏加载中有了很大提升。如下图所示，200ms内就已经完成首次渲染，渲染出页面基本的 `html` 页面。
+
+![微信截图_20200117172906.png](http://static.hecun.site/hecun157925337085377.png)
+
+同时， 在 Google 开发者网站上也对 http://ele.me 的案例进行了[分析](https://developers.google.cn/web/showcase/2017/eleme)。从这个案例分析中，我们可以看到 `ele.me` `PWA` 改造的收益如下：
+
+- 预缓存的页面平均加载时间减少 11.6%
+- 所有页面的平均加载时间减少 6.35%
+- 在 `3G` 网络并且是第一次加载时，从页面加载到用户可操作的时间下降到 4.93s
+
+可见，`http://ele.me` 同样取得了很不错的收益。
 
 ## 项目中应用
 
-在
+目前基于公司项目来说，公司内 `web` 端以 `vue` 为技术栈开发为主。在 `vue` 的基础上加入 `PWA` 技术是可行的，并且在用户体验上也会有一定程度的提升。属于锦上添花的功能。原因如下：    
+
+- `vue` 为单页应用框架，契合 `pwa` 的开发建议  
+- 在 `vue-cli3` 脚手架工具中已经支持 `pwa` 应用
+- `pwa` 为渐进式应用，用户浏览器不支持的情况下会以普通 `web` 网页进行访问
 
 
-![pwa实现](http://static.hecun.site/hecun15792334717400.png)
+### PWA实践方式
 
+1. 添加 Web App Manifest 文件 
+
+添加 Manifest.json 文件配置基本应用信息。并引导用户添加应用的桌面快捷方式。在 `pc` 端的效果如下（以 `vue` 官网为例）： 
+
+![微信截图_20200118162000.png](http://static.hecun.site/hecun15793356411371.png)
+
+2. 使用 `Service Worker`  对部分静态资源文件进行缓存  
+
+`Service Worker` 是浏览器在后端独立于网页主进程运行的脚本，它可以拦截网络请求，可以操作本地缓存，还可以接受服务器推送的离线消息，它的功能很丰富。在项目中可以将常用的图片，`css` 文件，`js` 文件，请求常量的接口数据等进行缓存。可以减少请求，提高静态资源加载的速度。
+
+
+## 参考文章  
 [PWA应用实战](https://lavas-project.github.io/pwa-book/)   
 [PWA 是否能弥补Web 劣势，带来新一轮大前端技术洗牌？](https://zhuanlan.zhihu.com/p/31373357)   
-[PWA 在饿了么的实践经验](https://zhuanlan.zhihu.com/p/25800461)
+[PWA 在饿了么的实践经验](https://zhuanlan.zhihu.com/p/25800461)    
+[PWA 技术解析及爱奇艺 PC 端的实践](https://www.infoq.cn/article/oeIGSQADsm483Tv6br7j)   
+[PWA系列 -- 分享PWA在阿里体系内的实践经验](https://zhuanlan.zhihu.com/p/50502316)    
+[PWA 推送实践](https://www.qingtingip.com/h_246262.html)   
