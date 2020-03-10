@@ -10,11 +10,10 @@
  - 姜源/男/1995 
  - 本科/重庆科技大学 
  - 工作年限：2年
- - 技术博客：[http://blog.hecun.site](http://blog.hecun.site)
+ - 技术博客：[http://hecun.site](http://hecun.site)
+ - 掘金：[禾寸](https://juejin.im/user/599783bcf265da24975fd79f)
  - Github：[https://github.com/hecun0000](https://github.com/hecun0000)                          
   
-*** 
- - 期望职位：WEB前端工程师
 
 # 技能清单
 
@@ -67,13 +66,28 @@
 
 ## 七牛云图片上传工具
 
-项目描述： 桌面端七牛云图片上传工具，功能包括七牛云图片上传以及图片裁剪等功能   
+项目描述： 桌面端七牛云图片上传工具，功能包括七牛云图片上传以及图片裁剪等功能，该项目  
+技术栈：  electron + electron-vue + qiniu
 项目地址: [https://github.com/hecun0000/qiniu-tools](https://github.com/hecun0000/qiniu-tools)   
-难点：使用 `electron` 进行桌面应用程序开发，七牛云上传模块功能的整理与封装
+难点：使用 electron 框架进行桌面应用程序开发，七牛云上传模块功能的整理与封装
+
+## ts-axios(TypeScript版axios)
+
+项目描述： 根据 axios 项目使用 TypeScript 进行重构   
+技术栈： typescript + jest + webpack
+项目地址: [https://github.com/hecun0000/ts-axios](https://github.com/hecun0000/ts-axios)   
+难点：使用 TypeScript 对 JavaScript 版本进行重构；使用 jest 进行单元测试  
+
+## 诗词小程序
+
+项目描述： 诗词查询小程序，可对诗词进行浏览，查看，收藏等  
+技术栈：mpvue + nodejs + mysql + koa + tslint  
+难点： 使用 nodejs搭配使用 koa 和 mysql 进行后台开发；使用讯飞语音对诗词进行朗读
+
+
 
 
 ## 技术文章
 - SPA中的路由导航 [https://juejin.im/post/5d6325b7e51d453b1f37eb43](https://juejin.im/post/5d6325b7e51d453b1f37eb43)  
 - csv和excel读取和下载  点赞数：352     [https://juejin.im/post/5b1fdbcc5188257d571f2c62](https://juejin.im/post/5b1fdbcc5188257d571f2c62)   
 - vue项目中使用token的身份验证的简单实践 点赞数 201 [https://juejin.im/post/5c788f8a6fb9a04a0379e9ae](https://juejin.im/post/5c788f8a6fb9a04a0379e9ae)  
-      
