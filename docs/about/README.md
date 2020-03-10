@@ -9,7 +9,7 @@
 
  - 姜源/男/1995 
  - 本科/重庆科技大学 
- - 工作年限：2.5年
+ - 工作年限：2年
  - 技术博客：[http://blog.hecun.site](http://blog.hecun.site)
  - Github：[https://github.com/hecun0000](https://github.com/hecun0000)                          
   
@@ -18,58 +18,62 @@
 
 # 技能清单
 
-- 熟练掌握 HTML5 标签和 CSS 运⽤用以及新增的属性进⾏页面重构;  
-- 熟练掌握并会运用前端的基本框架和类库：jQuery、ECharts、Axios 等;  
+- 熟练掌握 HTML5 和 CSS 运用，快速进⾏页面重构;  
+- 熟练掌握并会运用前端的基本框架和类库：vue、axios、Echarts，TypeScript 等;  
 - 熟练运⽤响应式布局和弹性盒布局，利⽤ rem、px 和百分比进行移动端的布局;  
-- 熟练运⽤ Vue 框架，擅⻓ Vue 全家桶 + ElementUI 进⾏项⽬的开发;  
+- 熟练运⽤ Vue 框架，擅⻓ Vue 全家桶、sass、mockjs、jest等进行项目开发  
 - 懂得使用 docker + jenkins 配置前端自动化部署;  
-- 熟练使⽤ Sass 预编译，实现 CSS 的管理和维护;  
+- 懂得使用 PWA 技术开发离线应用;  
+- 懂得使用 electron 开发和构建桌面端应用程序;  
+- 了解 nodejs 相关知识，可使用 koa/expess、MongoDB 进行简单的后台开发; 
 - 了解 Webpack 前端自动化构建工具以及 Git 代码托管工具;  
-- 了解云服务器的基本搭建部署和运作流程;  
+
 
 
 # 工作经历
 
-## 陕西德容信息技术有限公司 （ 2019年9月 ~ 至今 ）
+## 陕西德容信息技术有限公司 （ 2019年5月 ~ 至今 ）
 
-### 军事代表移动监督平台   
+### 一体化综合管理平台（OA办公）   
 
-- 项目描述： vue + axios + vuex + vue-router + element-ui + echarts 
-- 职责： 
-- 难点： 
+项目描述： 面向企业的办公管理平台。包括企业门户平台、协同办公、业务支撑，管理支撑等模块   
+
+职责：
+1. 定制项目开发规范
+2. 项目基础脚手架工程搭建  
+3. 梳理项目中业务组件并进行深度封装  
+4. 处理并解决复杂问题并提供解决方案
+
+难点： 在前端项目开发规范的定制，需要符各成员的习惯提高开发效率和代码质量，并逐步在公司前端开发中推广；在脚手架工具的封装中，需要考虑依赖库的兼容性、浏览器兼容性、项目代码的稳定性以及权衡客户的使用场景进行脚手架搭建。
+
 
 
 ## 西安绿豆芽信息科技有限公司 （ 2018年3月 ~ 2019年4月 ）
 
-### 乐店云通用版后台管理项目   
+### 乐店云通用版后台管理项目（电商）   
 
-- 项目描述： vue + axios + vuex + vue-router + element-ui + echarts 
-- 职责： 
-- 难点： 
+项目描述： 面向商家的电商小程序后台管理系统，包括商品、订单、营销、支付等模块    
+职责： 
 
+1. 负责商品、订单、支付等模块的业务开发
+2. 部分组件的封装（区域运费选择器，商品规格选择器等）
+3. 权限管理以及用户认证等功能方案研究及实现  
 
-
-# 学习作品
-
-## vue-cropperjs
-  - 使用技术： vue + cropper + element-ui + qiniu + express + nginx
-  - 介绍：主要方便自己将图片上传至七牛云
-  - 功能：
-    1. 支持图片的单个上传以及批量上传
-    2. 可对图片进行裁剪，压缩（支持圆形裁剪）
-  - 个人收获： 
-    1. 在服务器上部署 node 和 vue 相关代码，并配置域名，可进行访问
-    2. 将复用部分进行组件化封装
-  - 在线地址： [http://p.hecun.site/cropper](http://p.hecun.site/cropper)
+难点： 主域名与二级域名下数据通信，并实现用户认证以及权限管理方案等；项目中的业务组件的抽离以及封装，需要符合单一职责原则、可定制化配置、独立化等。开发的公共组件有，图片上传组件、商品sku生成组件、富文本组件等。
 
 
-## 个人博客
-  - 使用技术： vue + vuepress + nginx + docker
-  - 功能： 主要记录工作中常用的代码块以及学习笔记的记录
-  - 在线地址： [http://blog.hecun.site/](http://blog.hecun.site/)
- 
+
+# 开源作品
+
+## 七牛云图片上传工具
+
+项目描述： 桌面端七牛云图片上传工具，功能包括七牛云图片上传以及图片裁剪等功能   
+项目地址: [https://github.com/hecun0000/qiniu-tools](https://github.com/hecun0000/qiniu-tools)   
+难点：使用 `electron` 进行桌面应用程序开发，七牛云上传模块功能的整理与封装
+
+
 ## 技术文章
-
-- csv和excel读取和下载  点赞数：352     [https://juejin.im/post/5b1fdbcc5188257d571f2c62](https://juejin.im/post/5b1fdbcc5188257d571f2c62) 
-- vue项目中使用token的身份验证的简单实践 点赞数 201 [https://juejin.im/post/5c788f8a6fb9a04a0379e9ae](https://juejin.im/post/5c788f8a6fb9a04a0379e9ae)
+- SPA中的路由导航 [https://juejin.im/post/5d6325b7e51d453b1f37eb43](https://juejin.im/post/5d6325b7e51d453b1f37eb43)  
+- csv和excel读取和下载  点赞数：352     [https://juejin.im/post/5b1fdbcc5188257d571f2c62](https://juejin.im/post/5b1fdbcc5188257d571f2c62)   
+- vue项目中使用token的身份验证的简单实践 点赞数 201 [https://juejin.im/post/5c788f8a6fb9a04a0379e9ae](https://juejin.im/post/5c788f8a6fb9a04a0379e9ae)  
       
