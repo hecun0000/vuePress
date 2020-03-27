@@ -2,7 +2,7 @@
 sidebar: auto
 ---
 
-<!-- # 骚年请不要复制tameplate了  -->
+# 骚年请不要复制tameplate了 
 
 ## 写在前面   
 
@@ -10,13 +10,14 @@ sidebar: auto
 
 ## 先看效果
 
+![展示图.gif](http://static.hecun.site/hecun158532009407947.gif)
 
 
 ## 安装
 
 一般选在安装到本地项目中，执行下面命令进行安装：
 
-```sh
+```shell
 // 全局安装
 npm i -g plop
 
@@ -34,7 +35,6 @@ npm i --save-dev plop
 }
 ```
 运行 `npm run g` 即可执行相关配置。相关配置后面慢慢介绍。
-
 
 
 ## 基本配置   
@@ -75,6 +75,11 @@ module.exports = plop => {
 ```
 
 ### vuex 模块配置  
+
+首先预览下效果： 
+
+![vuex.gif](http://static.hecun.site/hecun158532081935789.gif)
+
 在vuex的模块中，主要是生成一个 modules 文件。根据模板文件生成文件，并放在 store/modules 文件夹下。模板文件如下： 
 
 ```js
@@ -131,7 +136,10 @@ module.exports = {
 
 更多关键词，请查看相关文档[点击查看](https://github.com/plopjs/plop#case-modifiers)  
 
-### api 模块配置
+### api 模块配置  
+
+首先预览下效果： 
+![api.gif](http://static.hecun.site/hecun158532049044137.gif)
 
 在api模块的配置和上述操作类似，我直接贴一下相关配置， 只介绍一下不同的部分。  
 
@@ -170,6 +178,9 @@ export const get{{properCase file}}List = data => Request.get('{{kebabCase dir}}
 在模板文件中，我们可以使用 `dir` , `file`用户输入的变量， 然后修改模板文件中的内容。
 
 ### views 相关配置 
+
+首先预览下效果： 
+![展示图.gif](http://static.hecun.site/hecun158532009407947.gif)
 
 该配置比前面的稍微复杂一点，但是一步一步分析也很容易理解。
 
@@ -231,8 +242,6 @@ export default {
   }
 }
 ```
-
-
 
 下面为主要配置文件： 
 ```js
@@ -330,14 +339,35 @@ module.exports = {
   }
 }
 ```
-完整示例请参考[项目地址](https://github.com/hecun0000/vue-tamplate)
+完整示例请参考[项目地址 https://github.com/hecun0000/vue-tamplate](https://github.com/hecun0000/vue-tamplate)顺便求个start
 
+## 最后说两句    
 
+上述只是一个简单配置，项目中可以根据项目特点进行模板定制，从而提升工作效率。如果你有更好的建议欢迎留言评论，大家共同交流学习，共同进步。如果看完后，觉得对你有用欢迎、点赞、评论、分享！！！谢谢！！！
 
+另外，我也开通了个人公众号，欢迎关注！！！
 
-
-## 最后说两句  
-
-<!-- 另外，我也开通了个人公众号，欢迎关注，共同学习，共同进步。
-
-![](https://user-gold-cdn.xitu.io/2020/3/18/170edbd22562a1ed?w=258&h=258&f=jpeg&s=27328) -->
+<div class="code-box">
+  <span class="h-name">禾寸</span>
+  <span class="h-title">欢迎关注！喜欢就坚持吧！</span>
+  <img class="qr-code" src="http://static.hecun.site/hecun158193959460065.jpg">
+</div>
+<style>
+.qr-code {
+ 	width: 60% !important;
+  margin: auto;
+  display: block;
+}
+.h-name {
+   text-align: center !important;
+  display: block;
+  font-size: 14px;
+  font-weight: bold;
+  margin: 18px 0 8px;
+}
+.h-title {
+  text-align: center !important;
+  display: block;
+  font-size: 12px;
+}
+</style>
