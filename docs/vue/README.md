@@ -1,7 +1,7 @@
 
 # vue
 
-#### [骚年请不要复制tameplate了](/vue/plop.md) 
+#### [骚年请不要复制tamplate了](/vue/plop.md) 
 #### [动态表单渲染](/vue/动态表单渲染.md) 
 #### [基于vue做一个禅道主页拖拽效果](/vue/基于vue仿一个禅道拖拽效果.md) 
 #### [cropperjs图片裁剪](/vue/cropperjs图片裁剪.md) 
