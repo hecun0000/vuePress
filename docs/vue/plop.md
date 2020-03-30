@@ -2,15 +2,30 @@
 sidebar: auto
 ---
 
-# 骚年请不要复制tameplate了 
+# 骚年，请不要手敲 tamplate 了 
 
 ## 写在前面   
 
-天天搬砖，也早已变成了cv工程师。频繁的复制粘贴，复制完成后再删除，枯燥且无聊。项目中我们通常在编辑器中配置快捷键生成代码片段。好像这些也满足不了cv的欲望。在项目中配置业务相关的一些模板文件，显得尤为重要。不受编辑器的限制，更好的自定义配置，显得更为强大。 这里使用[plop](https://www.npmjs.com/package/plop)工具进行一些配置，下面一起看看吧！  
+天天搬砖，也早已变成了cv工程师。频繁的复制粘贴，复制完成后再删除，枯燥且无聊。项目中我们通常在编辑器中配置快捷键生成代码片段。好像这些也满足不了cv的欲望。在项目中配置业务相关的一些模板文件，显得尤为重要。不受编辑器的限制，更好的自定义配置，显得更为强大。 
 
 ## 先看效果
 
 ![展示图.gif](http://static.hecun.site/hecun158532009407947.gif)
+
+其实，生成代码片段的方式有很多，比如在代码编辑器中配置快捷键，就可以生成代码片段。比如在 vscode 里面安装插件也能可以。虽然编辑器可以实现，但是不能够更加自定义。 
+
+在大型项目中，好多页面都是比较相似的，代码层面基本类似，通常新建一个页面组件，需要复制之前的一个页面、复制api文件、复制store中的文件，然后改一下相关变量。   
+
+现在我们可以将这部分代码的公共部分进行抽离做成一个模板文件，通过询问的方式获取是否需要添加部分代码片段。通过判断，然后生成的相应文件。这样我们就可以形成一个该项目特有的通用代码的生成方式，提高工作效率妥妥的。  
+
+主要步骤：  
+
+1. 抽离项目中公共代码，形成模板文件  
+2. 通过 '询问' 收集，定制化页面的一些配置  
+3. 生成相应的文件
+
+
+这里使用[plop](https://www.npmjs.com/package/plop)工具进行一些配置，下面一起看看吧！  
 
 
 ## 安装
@@ -22,7 +37,7 @@ sidebar: auto
 npm i -g plop
 
 // 本地安装
-npm i --save-dev plop
+npm i plop -D 
 ```
 配置 scripts 命令：
 
@@ -34,26 +49,22 @@ npm i --save-dev plop
   // ...
 }
 ```
-运行 `npm run g` 即可执行相关配置。相关配置后面慢慢介绍。
+运行 `npm run g` 即可执行相关配置。其中 `generators/index.js` 为执行命令的入口文件。   
+相关配置后面慢慢介绍。
 
 
-## 基本配置   
+## 基本使用   
 
 相关配置可参考官方文档，我仅仅介绍下，我自己在项目中的配置， 大家可以参考一下。
 
 这里我在我自己的一个项目基础上添加，项目地址为[点击查看](https://github.com/hecun0000/vue-tamplate)。
 
-首先展示下目录结构： 
+在 `generators/index.js` 我配置了四种命令： 
 
-```sh
-├ generators    // 主要配置文件
-  ├─api         // api 相关配置
-  ├─component   // component 相关配置
-  ├─store       // vue 相关配置
-  ├─utils       // 工具函数
-  ├─view        // view 相关配置
-  └─index.js    // 入口文件
-```
+- component：生成公共组件
+- views：生成页面 
+- vuex：生成 store 中 modules 文件
+- api: 生成api配置文件
 
 ```js
 // 引入各模块位置文件
@@ -74,13 +85,27 @@ module.exports = plop => {
 }
 ```
 
-### vuex 模块配置  
+首先展示下目录结构： 
+
+```sh
+├ generators    // 主要配置文件
+  ├─api         // api 相关配置
+  ├─component   // component 相关配置
+  ├─store       // vue 相关配置
+  ├─utils       // 工具函数
+  ├─view        // view 相关配置
+  └─index.js    // 入口文件
+```
+
+
+### vuex 模块  
 
 首先预览下效果： 
 
 ![vuex.gif](http://static.hecun.site/hecun158532081935789.gif)
 
-在vuex的模块中，主要是生成一个 modules 文件。根据模板文件生成文件，并放在 store/modules 文件夹下。模板文件如下： 
+
+在 `vuex` 的模块中，主要是生成一个 `modules` 文件。根据模板文件生成文件，并放在 `store/modules` 文件夹下。模板文件如下： 
 
 ```js
 // ./store/modules.hbs 模板文件
@@ -104,7 +129,13 @@ export default {
 }
 ```
 
-该模板的生成还是十分简单，我们只需要用户输入一个文件名, 这里使用 `modules` 接受用户在命令行中输入的模块名称，在动态生成文件路径中使用。
+该模板的生成还是十分简单，我们只需要通过 '询问' 生成文件的文件名, 这里使用 `modules` 接受用户在命令行中输入的模块名称。然后在 `actions` 中 配置生成文件的文件路径即可。相关配置不做具体介绍，可以查看相关注释。  
+
+|属性	|类型|含义|
+| --	| -- |	-- |	-- |
+|description	| String	|	对该命令进行简要描述|
+|prompts	| array	|	对用户进行询问|
+|actions	| Array/Function	|	操作行为, 若为 `Function` ，入参为询问后收集的参数，返回 `actions` 配置|
 
 ```js
 // ./store/index.js 配置文件
@@ -129,24 +160,35 @@ module.exports = {
   ]
 }
 ```
-其中 `kebabCase` 可格式化数据，将 `modules` 转化为小驼峰的格式。
-常用的还有下面的关键词： 
+其中 `kebabCase` 可格式化数据，将 `modules` 转化为小驼峰的格式。   
+常用的还有下面的关键词，可以格式化用户输入参数： 
 - camelCase: changeFormatToThis  小驼峰 
 - properCase/pascalCase: ChangeFormatToThis 大驼峰
 
 更多关键词，请查看相关文档[点击查看](https://github.com/plopjs/plop#case-modifiers)  
 
-### api 模块配置  
+### api 配置文件  
 
 首先预览下效果： 
 ![api.gif](http://static.hecun.site/hecun158532049044137.gif)
 
 在api模块的配置和上述操作类似，我直接贴一下相关配置， 只介绍一下不同的部分。  
 
+先准备好相应的模板文件如下： 
+
+```js
+// ./api/api.hbs
+import Request from '@/utils/request'
+
+export const get{{properCase file}}List = data => Request.get('{{kebabCase dir}}/{{kebabCase file}}', data)
+```
+在项目中， `api` 配置文件我放在 `/src/api` 目录下，文件夹名称是对应页面的模块名，文件名是具体页面的名称，所以需要通过询问的方式，获取 `dir`参数 `api` 目录下要生成的文件夹名称、`file`参数对应的文件名称。
+
 ```js
 // ./api/index.js
 module.exports = {
-  description: 'api 配置文件 ',
+  description: 'api 配置文件',
+  // 询问
   prompts: [
     {
       type: 'input',
@@ -159,6 +201,7 @@ module.exports = {
       message: '请输入文件名称'
     }
   ],
+  // 操作行为
   actions: [
     {
       type: 'add',
@@ -169,20 +212,14 @@ module.exports = {
 }
 ```
 
-```js
-// ./api/api.hbs
-import Request from '@/utils/request'
-
-export const get{{properCase file}}List = data => Request.get('{{kebabCase dir}}/{{kebabCase file}}', data)
-```
-在模板文件中，我们可以使用 `dir` , `file`用户输入的变量， 然后修改模板文件中的内容。
-
-### views 相关配置 
+### views 页面
 
 首先预览下效果： 
 ![展示图.gif](http://static.hecun.site/hecun158532009407947.gif)
 
 该配置比前面的稍微复杂一点，但是一步一步分析也很容易理解。
+
+下面通过设置的询问，慢慢解释！！！
 
 1. 请输入 `views` 所在文件夹名称!  
 在该询问中，添加了重名验证，在输入重复名称时，会提示并且可以重新输入文件夹名称。保存用户输入至 `dir` 变量中
@@ -190,20 +227,27 @@ export const get{{properCase file}}List = data => Request.get('{{kebabCase dir}}
 和之前的的配置没有什么区别，主要获取新建的文件名称。保存至变量 `name` 中。
 
 3. 是否需要 编辑弹窗 组件？   
-将用户选在结果保存在 `hasDialog` 中，在 `actions` 属性可以为函数，参数为用户输入变量，需返回  `actions` 的配置数组。这样就可以在 `actions` 中根据 `hasDialog` 进行动态判断生成 `action`。
+将用户选在结果保存在 `hasDialog` 中，这样就可以在 `actions` 中根据 `hasDialog` 进行动态判断生成 `action`。
 
 4. 是否添加 api 配置文件?   
+
 将用户选在结果保存在 `hasApi` 中，然后在 `actions` 中进行判断。此处可以直接执行已经配置好的命令，动态生成。这里使用 `node` 中的 `child_process.exec`函数执行命令  `npm run g api ${dir} ${name}` 即可。
 
 5. 是否添加 `vuex moudule` 文件?   
+
 同理根据 `hasVuex` 的值，执行 `npm run g vuex ${name}`命令即可
 
 [child_process.exec相关文档](http://nodejs.cn/api/child_process.html#child_process_child_process_exec_command_options_callback)
 
 
+在 `actions` 属性可以为函数，参数为用户输入变量，需返回  `actions` 的配置数组。
+
 在经过上述询问后，我们也得到了  `hasDialog` , `hasApi` , `hasVuex` , `name` , `dir` 相关的变量。同时，也需要在 `.hbs` 模板文件中动态的显示部分代码片段。
 
+模板文件过多，这里就不贴出了，仅贴出关键部分。
+
 ```js
+// ./view/components.hbs
 import { pagination } from '@/mixins'
 {{#if hasApi}}
 import { get{{properCase name}}List } from '@/api/{{kebabCase dir}}/{{kebabCase name}}'
@@ -245,6 +289,7 @@ export default {
 
 下面为主要配置文件： 
 ```js
+// ./view/index.js
 const exec = require('child_process').exec
 const componentExist = require('../utils/index')
 
