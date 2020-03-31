@@ -2,7 +2,7 @@
 sidebar: auto
 ---
 
-# 骚年，请不要手敲 tamplate 了 
+# 骚年，请不要手敲 template 了 
 
 ## 写在前面   
 
@@ -10,7 +10,7 @@ sidebar: auto
 
 ## 先看效果
 
-![展示图.gif](http://static.hecun.site/hecun158532009407947.gif)
+![](http://static.hecun.site/hecun158532009407947.gif)
 
 其实，生成代码片段的方式有很多，比如在代码编辑器中配置快捷键，就可以生成代码片段。比如在 vscode 里面安装插件也可以。虽然编辑器可以实现，但是不能够更加自定义。 
 
@@ -102,7 +102,7 @@ module.exports = plop => {
 
 首先预览下效果： 
 
-![vuex.gif](http://static.hecun.site/hecun158532081935789.gif)
+![](http://static.hecun.site/hecun158532081935789.gif)
 
 
 在 `vuex` 的模块中，主要是生成一个 `modules` 文件。根据模板文件生成文件，并放在 `store/modules` 文件夹下。模板文件如下： 
@@ -170,7 +170,7 @@ module.exports = {
 ### api 配置文件  
 
 首先预览下效果： 
-![api.gif](http://static.hecun.site/hecun158532049044137.gif)
+![](http://static.hecun.site/hecun158532049044137.gif)
 
 在api模块的配置和上述操作类似，我直接贴一下相关配置， 只介绍一下不同的部分。  
 
@@ -215,7 +215,7 @@ module.exports = {
 ### views 页面
 
 首先预览下效果： 
-![展示图.gif](http://static.hecun.site/hecun158532009407947.gif)
+![](http://static.hecun.site/hecun158532009407947.gif)
 
 该配置比前面的稍微复杂一点，但是一步一步分析也很容易理解。
 
@@ -385,7 +385,7 @@ module.exports = {
   }
 }
 ```
-完整示例请参考[项目地址 https://github.com/hecun0000/vue-tamplate](https://github.com/hecun0000/vue-tamplate)顺便求个start
+完整示例请参考[项目地址](https://github.com/hecun0000/vue-tamplate)顺便求个start
 
 ## 最后说两句    
 
