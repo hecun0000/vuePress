@@ -1,5 +1,6 @@
 # JavaScript
 
+#### [每日一题](/js/每日一题.md)
 #### [davinci_web](/js/davinci_web.md)
 #### [PWA](/js/PWA.md)
 #### [栈](/js/栈.md)
