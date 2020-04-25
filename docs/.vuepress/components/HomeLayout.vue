@@ -1,5 +1,6 @@
 <template>
     <div class="index">
+      <navbar/>
         <div class="content-box">
             <h2 class="title">hecun</h2>
 
@@ -18,9 +19,11 @@
 </template>
 <script>
 import waves from './main/index_bg_waves'
+import Navbar from '@theme/components/Navbar.vue'
 export default {
     components:{
-        waves
+        waves,
+        Navbar
     }
 }
 </script>
