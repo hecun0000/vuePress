@@ -6,41 +6,6 @@ copyright: true
 sidebar: auto
 ---
 
-### 对前端界面工程师这个职位是怎么样理解的？它的前景会怎么样？ 
-前端是最贴近用户的程序员，比后端、数据库、产品经理、运营、安全都近。
-
-- 实现界面交互
-- 提升用户体验
-- 有了Node.js，前端可以实现服务端的一些事情
-- 参与项目，快速高质量完成实现效果图，精确到1px；
-- 与团队成员，UI设计，产品经理的沟通；
-- 做好的页面结构，页面重构和用户体验；
-- 处理hack，兼容、写出优美的代码格式；
-- 针对服务器的优化、拥抱最新前端技术。
- 
-# css 常见基础面试题  
-
-
-
-1. css引入的方式有哪些?link和@import的区别?  
-    引入方式3种：行内添加定义style属性值，页面头部内内嵌调用和外链调用，
-    区别：
-    + link是xhtml标签，除了加载css外，还可以定义RSS等其他事务，@import只能加载CSS
-    + link引用CSS时候，页面载入的时候同时加载，@import需要页面网页完全载入后加载
-    + link是XHTML标签，没有兼容问题，@import是在CSS2.1提出的，低版本的浏览器不支持。
-    + link支持使用javascript控制DOM去改变样式，但是@import不支持。 
-2. img标签上的title和alt属性区别是什么?
-    - alt是当图片不能正常显示的时候，用文字代替
-    - title该属性提供信息
-3. translate()方法能移动一个元素在z轴上的位置？
-    不能。translate()方法只能改变x轴，y轴上的位移
-4. display:none 和visibilty:hidden的区别：
-    display:none和visibility:hidden都是把网页上某个元素隐藏起来的功能，
-    但两者有所区别，                                        
-    - visibility:hidden属性会使对象不可见，但该对象在网页所占的空间没有改变（看不见但摸得到），等于留出了一块空白区域，
-    - 而display:none`属性会使这个对象彻底消失（看不见也摸不到）
-5. 请描述 BFC(Block Formatting Context) 及其如何工作。
-    浮动元素和绝对定位元素，非块级盒子的块级容器（例如 inline-blocks, table-cells, 和 table-captions），以及overflow值不为“visiable”的块级盒子，
 都会为他们的内容创建新的BFC（块级格式上下文）;  
     **会触发BFC的条件有**： 
     - float的值不为none。

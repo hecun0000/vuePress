@@ -57,7 +57,10 @@ npm i plop -D
 
 相关配置可参考官方文档，我仅仅介绍下，我自己在项目中的配置，仅供参考。
 
-这里我在我自己的一个项目基础上添加，项目地址为[点击查看](https://github.com/hecun0000/vue-tamplate)。
+这里我在我自己的一个项目基础上添加，项目地址为[点击查看](https://github.com/hecun0000/vue-ta 
+
+
+mplate)。
 
 在 `generators/index.js` 我配置了四种命令： 
 
